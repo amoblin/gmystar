@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf8" standalone="yes"?>
+<mystar>
+	<users>
+		<user active="true">
+			<nickname>崔贵林</nickname>
+			<name>CSiP</name>
+			<password>lenovo</password>
+			<fakeAddress>59.64.64.12</fakeAddress>
+		</user>
+		<user active="false">
+			<nickname>肖山</nickname>
+			<name>xiaoshan</name>
+			<password>13466356966</password>
+			<fakeAddress>59.64.64.130</fakeAddress>
+		</user>
+		<user active="false">
+			<nickname>小黄</nickname>
+			<name>hjy332016</name>
+			<password>hjy332016</password>
+			<fakeAddress>59.64.64.139</fakeAddress>
+		</user>
+		<user active="false">
+			<nickname>李金楠</nickname>
+			<name>59.64.64.127</name>
+			<password>lijinnan</password>
+			<fakeAddress>67979928</fakeAddress>
+		</user>
+		<user active="false">
+			<nickname>冉李</nickname>
+			<name>ranli</name>
+			<password>19860623</password>
+			<fakeAddress>59.64.64.181</fakeAddress>
+		</user>
+		<user active="false">
+			<nickname>王轶</nickname>
+			<name>wangyi611</name>
+			<password>256934</password>
+			<fakeAddress>59.64.64.115</fakeAddress>
+		</user>
+		<user active="false">
+			<nickname>郭垣</nickname>
+			<name>gy8731</name>
+			<password>gy8731com</password>
+			<fakeAddress>59.64.64.65</fakeAddress>
+		</user>
+		<user active="false">
+			<nickname>魏美圣</nickname>
+			<name>wms2006</name>
+			<password>987654</password>
+			<fakeAddress>59.64.64.52</fakeAddress>
+		</user>
+	</users>
+	<config>
+		<!-- #authentication mode, 0 means standard mode, 1 means star-private-mode-->
+		<authenticationMode>0</authenticationMode>
+		<!--#which interface(NIC) to use ? usually  it's eth0.-->
+		<nic>eth0</nic>
+		<!--#echo interval, 4 seconds. usually between 1 and 100 #set it to 0 to DISABLE it-->
+		<echoInterval>4</echoInterval>
+		<!--#enable intelligent reconnect?  #Intelligent reconnecting means pinging your netgate every 2 seconds, and if #pinging returns timeout, we will restart authentication.  #Note: this parameter is NOT supported and ignored NOW!  # 1 means enable, and 0 means disable -->
+		<intelligentReconnect>0</intelligentReconnect>
+		<autologin>true</autologin>
+	</config>
+</mystar>

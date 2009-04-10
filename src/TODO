@@ -1,0 +1,2 @@
+  sendpacket.c 中有很多代码可以共享、优化
+  加智能重连代码(ping the netgate every 2 seconds)

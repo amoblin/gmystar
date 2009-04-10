@@ -1,0 +1,274 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+Alog	src/blog.cc	/^unsigned char Mystar::Alog (unsigned char BForAlog)$/;"	f	class:Mystar
+BIN	Makefile	/^BIN    = .\/bin$/;"	m
+BIN	src/Makefile	/^BIN    = ..\/bin$/;"	m
+BUFFER_SIZE	src/Mystar.h	28;"	d
+Blog	src/blog.cc	/^void Mystar::Blog (void)$/;"	f	class:Mystar
+CC	Makefile	/^CC     = g++$/;"	m
+CC	src/Makefile	/^CC     = g++$/;"	m
+CFLAGS	Makefile	/^CFLAGS = `pkg-config --cflags gtkmm-2.4 libglademm-2.4`$/;"	m
+CFLAGS	src/Makefile	/^CFLAGS = `pkg-config --cflags gtkmm-2.4 libglademm-2.4`$/;"	m
+CLIBS	Makefile	/^CLIBS  = `pkg-config --libs gtkmm-2.4 libglademm-2.4`$/;"	m
+CLIBS	src/Makefile	/^CLIBS  = `pkg-config --libs gtkmm-2.4 libglademm-2.4`$/;"	m
+CodeConverter	src/CodeConverter.h	/^        CodeConverter(const char *from_charset,const char *to_charset)$/;"	f	class:CodeConverter
+CodeConverter	src/CodeConverter.h	/^class CodeConverter$/;"	c
+CodeConverter	src/f.cpp	/^        CodeConverter(const char *from_charset,const char *to_charset)$/;"	f	class:CodeConverter
+CodeConverter	src/f.cpp	/^class CodeConverter$/;"	c	file:
+ComputeHash	src/MD5.cc	/^unsigned char* MD5::ComputeHash(unsigned char* src,int len)$/;"	f	class:MD5
+ConvertGBKToUtf8	src/GBK2UTF8.c	/^void ConvertGBKToUtf8(CString &amp,CString strGBK)$/;"	f
+ConvertUtf8ToGBK	src/GBK2UTF8.c	/^void ConvertUtf8ToGBK(CString &amp,CString strUtf8)$/;"	f
+DEBUG	src/Mystar.h	25;"	d
+Decode	src/MD5.cc	/^void MD5::Decode (UINT4 *output, unsigned char *input, unsigned int len)$/;"	f	class:MD5
+EGG_IS_TRAY_ICON	src/eggtrayicon.h	34;"	d
+EGG_IS_TRAY_ICON_CLASS	src/eggtrayicon.h	35;"	d
+EGG_TRAY_ICON	src/eggtrayicon.h	32;"	d
+EGG_TRAY_ICON_CLASS	src/eggtrayicon.h	33;"	d
+EGG_TRAY_ICON_GET_CLASS	src/eggtrayicon.h	36;"	d
+EGG_TYPE_TRAY_ICON	src/eggtrayicon.h	31;"	d
+EXEC	Makefile	/^EXEC   = $(BIN)\/gMystar$/;"	m
+EXEC	src/Makefile	/^EXEC   = $(BIN)\/gMystar$/;"	m
+EggTrayIcon	src/eggtrayicon.h	/^typedef struct _EggTrayIcon	  EggTrayIcon;$/;"	t	typeref:struct:_EggTrayIcon
+EggTrayIconClass	src/eggtrayicon.h	/^typedef struct _EggTrayIconClass  EggTrayIconClass;$/;"	t	typeref:struct:_EggTrayIconClass
+Encode	src/MD5.cc	/^void MD5::Encode(unsigned char *output, UINT4 *input, unsigned int len)$/;"	f	class:MD5
+F	src/MD5.cc	77;"	d	file:
+FF	src/MD5.cc	89;"	d	file:
+FILTER_STR	src/Mystar.h	27;"	d
+FLAGS	Makefile	/^FLAGS = -DDEBUG $/;"	m
+FLAGS	src/Makefile	/^FLAGS = -DDEBUG $/;"	m
+FillNetParamater	src/blog.cc	/^void Mystar::FillNetParamater (unsigned char ForFill[])$/;"	f	class:Mystar
+G	src/MD5.cc	78;"	d	file:
+GG	src/MD5.cc	94;"	d	file:
+H	src/MD5.cc	79;"	d	file:
+HH	src/MD5.cc	99;"	d	file:
+I	src/MD5.cc	80;"	d	file:
+ICONV_CONST	src/convert.c	7;"	d	file:
+II	src/MD5.cc	104;"	d	file:
+InitializeBlog	src/blog.cc	/^void Mystar::InitializeBlog (const unsigned char *m_ip, const unsigned char *m_netmask,$/;"	f	class:Mystar
+MD5	src/MD5.cc	/^MD5::MD5()$/;"	f	class:MD5
+MD5	src/MD5.h	/^class MD5$/;"	c
+MD5Final	src/MD5.cc	/^void MD5::MD5Final (unsigned char digest[16], MD5_CTX *context)$/;"	f	class:MD5
+MD5Init	src/MD5.cc	/^void MD5::MD5Init (MD5_CTX * context)$/;"	f	class:MD5
+MD5Transform	src/MD5.cc	/^void MD5::MD5Transform (UINT4 state[4],unsigned char block[64])$/;"	f	class:MD5
+MD5Update	src/MD5.cc	/^void MD5::MD5Update (MD5_CTX *context, unsigned char *input, unsigned int inputLen)$/;"	f	class:MD5
+MD5_CTX	src/MD5.h	/^} MD5_CTX;$/;"	t	typeref:struct:__anon3
+MD5_memcpy	src/MD5.cc	/^void MD5::MD5_memcpy (POINTER output, POINTER input, unsigned int len)$/;"	f	class:MD5
+MD5_memset	src/MD5.cc	/^void MD5::MD5_memset (POINTER output,int value,unsigned int len)$/;"	f	class:MD5
+Mystar	src/Mystar.cc	/^Mystar::Mystar()$/;"	f	class:Mystar
+Mystar	src/Mystar.h	/^class Mystar$/;"	c
+MystarMainWindow	src/gMystar.h	/^        Window *MystarMainWindow;$/;"	m	class:gMystar
+N_	src/eggtrayicon.c	38;"	d	file:
+N_	src/eggtrayicon.c	42;"	d	file:
+OBJ	Makefile	/^OBJ    = .\/obj$/;"	m
+OBJ	src/Makefile	/^OBJ    = ..\/obj$/;"	m
+OUTLEN	src/CodeConverter.h	8;"	d
+OUTLEN	src/f.c	5;"	d	file:
+OUTLEN	src/f.cpp	8;"	d	file:
+PADDING	src/MD5.cc	/^static unsigned char PADDING[64] = {$/;"	v	file:
+POINTER	src/MD5.h	/^typedef unsigned char *POINTER;$/;"	t
+PROP_0	src/eggtrayicon.c	/^  PROP_0,$/;"	e	enum:__anon1	file:
+PROP_ORIENTATION	src/eggtrayicon.c	/^  PROP_ORIENTATION$/;"	e	enum:__anon1	file:
+ROTATE_LEFT	src/MD5.cc	84;"	d	file:
+S11	src/MD5.cc	52;"	d	file:
+S12	src/MD5.cc	53;"	d	file:
+S13	src/MD5.cc	54;"	d	file:
+S14	src/MD5.cc	55;"	d	file:
+S21	src/MD5.cc	56;"	d	file:
+S22	src/MD5.cc	57;"	d	file:
+S23	src/MD5.cc	58;"	d	file:
+S24	src/MD5.cc	59;"	d	file:
+S31	src/MD5.cc	60;"	d	file:
+S32	src/MD5.cc	61;"	d	file:
+S33	src/MD5.cc	62;"	d	file:
+S34	src/MD5.cc	63;"	d	file:
+S41	src/MD5.cc	64;"	d	file:
+S42	src/MD5.cc	65;"	d	file:
+S43	src/MD5.cc	66;"	d	file:
+S44	src/MD5.cc	67;"	d	file:
+SRC	Makefile	/^SRC    = .\/src$/;"	m
+SRC	src/Makefile	/^SRC    = .\/$/;"	m
+SYSTEM_TRAY_BEGIN_MESSAGE	src/eggtrayicon.c	46;"	d	file:
+SYSTEM_TRAY_CANCEL_MESSAGE	src/eggtrayicon.c	47;"	d	file:
+SYSTEM_TRAY_ORIENTATION_HORZ	src/eggtrayicon.c	49;"	d	file:
+SYSTEM_TRAY_ORIENTATION_VERT	src/eggtrayicon.c	50;"	d	file:
+SYSTEM_TRAY_REQUEST_DOCK	src/eggtrayicon.c	45;"	d	file:
+SendEchoPacket	src/sendpacket.cc	/^    int Mystar::SendEchoPacket (libnet_t * l, const u_char * pkt_data)$/;"	f	class:Mystar
+SendEndCertPacket	src/sendpacket.cc	/^    int Mystar::SendEndCertPacket (libnet_t * l)\/\/结束通信$/;"	f	class:Mystar
+SendFindServerPacket	src/sendpacket.cc	/^int Mystar::SendFindServerPacket (libnet_t * l)$/;"	f	class:Mystar
+SendNamePacket	src/sendpacket.cc	/^int Mystar::SendNamePacket (libnet_t * l, const u_char * pkt_data)$/;"	f	class:Mystar
+SendPasswordPacket	src/sendpacket.cc	/^int Mystar::SendPasswordPacket (libnet_t * l, const u_char * pkt_data)$/;"	f	class:Mystar
+UINT2	src/MD5.h	/^typedef unsigned short int UINT2;$/;"	t
+UINT4	src/MD5.h	/^typedef unsigned long int UINT4;$/;"	t
+ULONG_BYTEARRAY	src/Mystar.h	/^}ULONG_BYTEARRAY;$/;"	t	typeref:union:__anon2
+User	src/User.cc	/^User::User()$/;"	f	class:User
+User	src/User.cc	/^User::User(char *username, char *password, char *nickname, char *fakeAddress)$/;"	f	class:User
+User	src/User.h	/^class User  \/\/用户信息$/;"	c
+_	src/eggtrayicon.c	37;"	d	file:
+_	src/eggtrayicon.c	41;"	d	file:
+_EggTrayIcon	src/eggtrayicon.h	/^struct _EggTrayIcon$/;"	s
+_EggTrayIconClass	src/eggtrayicon.h	/^struct _EggTrayIconClass$/;"	s
+__EGG_TRAY_ICON_H__	src/eggtrayicon.h	22;"	d
+authen	src/Mystar.cc	/^int Mystar::authen(void)$/;"	f	class:Mystar
+authenticationMode	src/Mystar.h	/^        int authenticationMode; \/\/是哪种认证模式：0:标准 1:实达$/;"	m	class:Mystar
+blogIsInitialized	src/blog.cc	/^static int blogIsInitialized = 0;$/;"	v	file:
+btValue	src/Mystar.h	/^	u_int8_t    btValue[4];$/;"	m	union:__anon2
+buffer	src/MD5.h	/^  unsigned char buffer[64];                         \/* input buffer *\/$/;"	m	struct:__anon3
+cd	src/CodeConverter.h	/^        iconv_t cd;$/;"	m	class:CodeConverter
+cd	src/f.cpp	/^        iconv_t cd;$/;"	m	class:CodeConverter	file:
+checkAndSetConfig	src/checkAndSetConfig.cc	/^void Mystar::checkAndSetConfig(void)$/;"	f	class:Mystar
+checkAndSetConfig	src/mystar.c	/^static void checkAndSetConfig(void)$/;"	f	file:
+circleCheck	src/blog.cc	/^static unsigned char circleCheck[2];	\/\/��������ֵ$/;"	v	file:
+code_convert	src/f.c	/^int code_convert(char *from_charset,char *to_charset,char *inbuf,int inlen,char *outbuf,int outlen)$/;"	f
+code_convert	src/gbk2utf8.cc	/^int code_convert(char *from_charset,char *to_charset,char *inbuf,size_t inlen,char *outbuf,size_t outlen)$/;"	f
+convert	src/CodeConverter.cc	/^int CodeConverter::convert(char *inbuf,int inlen,char *outbuf,int outlen)$/;"	f	class:CodeConverter
+convert	src/convert.c	/^int convert(const char *from, const char *to, char* save, int savelen, char *src, int srclen)$/;"	f
+convert	src/f.cpp	/^int CodeConverter::convert(char *inbuf,int inlen,char *outbuf,int outlen)$/;"	f	class:CodeConverter
+count	src/MD5.h	/^  UINT4 count[2];        \/* number of bits, modulo 2^64 (lsb first) *\/$/;"	m	struct:__anon3
+create_tray_icon	src/tray.cc	/^static GtkStatusIcon *create_tray_icon() {$/;"	f	file:
+destMAC	src/Mystar.h	/^        unsigned char destMAC[6];$/;"	m	class:Mystar
+eapol	src/Mystar.cc	/^int Mystar::eapol() \/\/TODO:找到EAPoL start，避免死循环   2009-02-23开始$/;"	f	class:Mystar
+echoInterval	src/Mystar.h	/^        int echoInterval;$/;"	m	class:Mystar
+egg_tray_icon_cancel_message	src/eggtrayicon.c	/^egg_tray_icon_cancel_message (EggTrayIcon *icon,$/;"	f
+egg_tray_icon_class_init	src/eggtrayicon.c	/^egg_tray_icon_class_init (EggTrayIconClass *klass)$/;"	f	file:
+egg_tray_icon_get_orientation	src/eggtrayicon.c	/^egg_tray_icon_get_orientation (EggTrayIcon *icon)$/;"	f
+egg_tray_icon_get_orientation_property	src/eggtrayicon.c	/^egg_tray_icon_get_orientation_property (EggTrayIcon *icon)$/;"	f	file:
+egg_tray_icon_get_property	src/eggtrayicon.c	/^egg_tray_icon_get_property (GObject    *object,$/;"	f	file:
+egg_tray_icon_get_type	src/eggtrayicon.c	/^egg_tray_icon_get_type (void)$/;"	f
+egg_tray_icon_init	src/eggtrayicon.c	/^egg_tray_icon_init (EggTrayIcon *icon)$/;"	f	file:
+egg_tray_icon_manager_filter	src/eggtrayicon.c	/^egg_tray_icon_manager_filter (GdkXEvent *xevent, GdkEvent *event, gpointer user_data)$/;"	f	file:
+egg_tray_icon_manager_window_destroyed	src/eggtrayicon.c	/^egg_tray_icon_manager_window_destroyed (EggTrayIcon *icon)$/;"	f	file:
+egg_tray_icon_new	src/eggtrayicon.c	/^egg_tray_icon_new (const gchar *name)$/;"	f
+egg_tray_icon_new_for_screen	src/eggtrayicon.c	/^egg_tray_icon_new_for_screen (GdkScreen *screen, const char *name)$/;"	f
+egg_tray_icon_realize	src/eggtrayicon.c	/^egg_tray_icon_realize (GtkWidget *widget)$/;"	f	file:
+egg_tray_icon_send_dock_request	src/eggtrayicon.c	/^egg_tray_icon_send_dock_request (EggTrayIcon *icon)$/;"	f	file:
+egg_tray_icon_send_manager_message	src/eggtrayicon.c	/^egg_tray_icon_send_manager_message (EggTrayIcon *icon,$/;"	f	file:
+egg_tray_icon_send_message	src/eggtrayicon.c	/^egg_tray_icon_send_message (EggTrayIcon *icon,$/;"	f
+egg_tray_icon_unrealize	src/eggtrayicon.c	/^egg_tray_icon_unrealize (GtkWidget *widget)$/;"	f	file:
+egg_tray_icon_update_manager_window	src/eggtrayicon.c	/^egg_tray_icon_update_manager_window (EggTrayIcon *icon,$/;"	f	file:
+err_doit	src/myerr.cc	/^void Mystar::err_doit(int errnoflag, const char *fmt, va_list ap)$/;"	f	class:Mystar
+err_dump	src/myerr.cc	/^void Mystar::err_dump(const char *fmt, ...)$/;"	f	class:Mystar
+err_msg	src/myerr.cc	/^void Mystar::err_msg(const char *fmt, ...)$/;"	f	class:Mystar
+err_quit	src/myerr.cc	/^void Mystar::err_quit(const char *fmt, ...)$/;"	f	class:Mystar
+err_ret	src/myerr.cc	/^void Mystar::err_ret(const char *fmt, ...)$/;"	f	class:Mystar
+err_sys	src/myerr.cc	/^void Mystar::err_sys(const char *fmt, ...)$/;"	f	class:Mystar
+fakeAddress	src/User.h	/^            char fakeAddress[32];$/;"	m	class:User
+filter_buf	src/Mystar.h	/^        char filter_buf[256];$/;"	m	class:Mystar
+filter_code	src/Mystar.h	/^        struct bpf_program filter_code;$/;"	m	class:Mystar	typeref:struct:Mystar::bpf_program
+g2u	src/f.c	/^int g2u(char *inbuf,size_t inlen,char *outbuf,size_t outlen)$/;"	f
+g2u	src/gbk2utf8.cc	/^int g2u(char *inbuf,size_t inlen,char *outbuf,size_t outlen)$/;"	f
+gMystar	src/gMystar.cc	/^gMystar::gMystar()$/;"	f	class:gMystar
+gMystar	src/gMystar.cc	/^gMystar::gMystar(int argc, char* argv[])\/\/初始化图形界面$/;"	f	class:gMystar
+gMystar	src/gMystar.h	/^class gMystar:public Mystar$/;"	c
+gbk2utf8	src/gbk2utf8.cc	/^char *Mystar::gbk2utf8(char *src)$/;"	f	class:Mystar
+gbk2utf8_2	src/gbk2utf8.cc	/^char *gbk2utf8_2(char *src)$/;"	f
+get_fakeAddress	src/User.cc	/^char *User::get_fakeAddress()$/;"	f	class:User
+get_nickname	src/User.cc	/^char *User::get_nickname()$/;"	f	class:User
+get_password	src/User.cc	/^char *User::get_password()$/;"	f	class:User
+get_username	src/User.cc	/^char *User::get_username()$/;"	f	class:User
+help	src/Mystar.cc	/^void Mystar::help()$/;"	f	class:Mystar
+help	src/gMystar.cc	/^void gMystar::help()$/;"	f	class:gMystar
+init	src/Mystar.cc	/^void Mystar::init(void) $/;"	f	class:Mystar
+init_authen	src/Mystar.cc	/^int Mystar::init_authen()$/;"	f	class:Mystar
+intelligentReconnect	src/Mystar.h	/^        int intelligentReconnect;$/;"	m	class:Mystar
+isFirstPacketFromServer	src/Mystar.h	/^        int isFirstPacketFromServer;$/;"	m	class:Mystar
+l	src/Mystar.h	/^        libnet_t *l;    \/\/指针，$/;"	m	class:Mystar
+l_errbuf	src/Mystar.h	/^        char l_errbuf[LIBNET_ERRBUF_SIZE];$/;"	m	class:Mystar
+l_ether_addr	src/Mystar.h	/^        struct libnet_ether_addr *l_ether_addr;$/;"	m	class:Mystar	typeref:struct:Mystar::libnet_ether_addr
+l_ip	src/Mystar.h	/^        u_int32_t l_ip;$/;"	m	class:Mystar
+localMAC	src/Mystar.h	/^        unsigned char localMAC[6];$/;"	m	class:Mystar
+logout	src/Mystar.cc	/^void Mystar::logout(int signo)    \/\/中断信号设置$/;"	f	class:Mystar
+m_DNS1	src/blog.cc	/^static unsigned char m_DNS1[4];$/;"	v	file:
+m_IP	src/blog.cc	/^static unsigned char m_IP[4];$/;"	v	file:
+m_NetGate	src/blog.cc	/^static unsigned char m_NetGate[4];$/;"	v	file:
+m_NetMask	src/blog.cc	/^static unsigned char m_NetMask[4];$/;"	v	file:
+m_authenticationMode	src/mystar.c	/^int           m_authenticationMode=-1; \/\/是哪种认证模式：0:标准 1:实达$/;"	v
+m_destMAC	src/mystar.c	/^unsigned char         m_destMAC[6];\/\/服务器的MAC地址.$/;"	v
+m_dns1	src/Mystar.h	/^        unsigned char m_dns1[4];$/;"	m	class:Mystar
+m_dns1	src/mystar.c	/^static unsigned char  m_dns1[4];   \/\/当前选择的网卡的DNS$/;"	v	file:
+m_echoInterval	src/mystar.c	/^static int    m_echoInterval= -1; \/\/echo间隔, set to 0 to disable echo$/;"	v	file:
+m_fakeAddress	src/mystar.c	/^static char  *m_fakeAddress=NULL;  \/\/ or set to "123.45.67.89" etc.$/;"	v	file:
+m_intelligentReconnect	src/mystar.c	/^static int    m_intelligentReconnect=-1; \/\/ 0:don't use it, 1: ues it.  NOTE: not supported NOW!!$/;"	v	file:
+m_ip	src/Mystar.h	/^        unsigned char m_ip[4];$/;"	m	class:Mystar
+m_ip	src/mystar.c	/^static unsigned char  m_ip[4];	\/\/当前选择的网卡的IP地址$/;"	v	file:
+m_key	src/Mystar.h	/^        ULONG_BYTEARRAY m_key;$/;"	m	class:Mystar
+m_key	src/mystar.c	/^ULONG_BYTEARRAY  m_key;       \/\/密码加密键值,在main()函数开始时初始化$/;"	v
+m_localMAC	src/mystar.c	/^unsigned char         m_localMAC[6];\/\/本机的MAC地址$/;"	v
+m_name	src/mystar.c	/^char         *m_name=NULL;\/\/用户名$/;"	v
+m_netgate	src/Mystar.h	/^        unsigned char m_netgate[4];$/;"	m	class:Mystar
+m_netgate	src/mystar.c	/^static unsigned char  m_netgate[4];\/\/当前选择的网卡的网关$/;"	v	file:
+m_netmask	src/Mystar.h	/^        unsigned char m_netmask[4];$/;"	m	class:Mystar
+m_netmask	src/mystar.c	/^static unsigned char  m_netmask[4];\/\/当前选择的网卡的子网掩码$/;"	v	file:
+m_nic	src/mystar.c	/^static char  *m_nic=NULL;\/\/网卡$/;"	v	file:
+m_password	src/mystar.c	/^char         *m_password=NULL;\/\/密码$/;"	v
+m_serialNo	src/Mystar.h	/^        ULONG_BYTEARRAY m_serialNo;$/;"	m	class:Mystar
+m_serialNo	src/mystar.c	/^ULONG_BYTEARRAY  m_serialNo;  \/\/序列号,收到第一个有效的Authentication-Success-packet时初始化$/;"	v
+m_state	src/Mystar.h	/^        volatile sig_atomic_t m_state;$/;"	m	class:Mystar
+m_state	src/mystar.c	/^static volatile sig_atomic_t m_state=0;\/\/当前认证状态$/;"	v	file:
+main	src/convert.c	/^int main()$/;"	f
+main	src/f.c	/^main()$/;"	f
+main	src/f.cpp	/^int main(int argc, char **argv)$/;"	f
+main	src/gMystar.cc	/^int main(int argc, char *argv[])$/;"	f
+main	src/mystar.c	/^int main(int argc, char* argv[])$/;"	f
+main	src/sample.cc	/^int main(int argc, char *argv[])$/;"	f
+main	src/tray.cc	/^int main(int argc, char **argv) {$/;"	f
+main	src/xercesc.cc	/^int main(int argc, char *argv[])$/;"	f
+manager_atom	src/eggtrayicon.h	/^  Atom manager_atom;$/;"	m	struct:_EggTrayIcon
+manager_window	src/eggtrayicon.h	/^  Window manager_window;$/;"	m	struct:_EggTrayIcon
+md5	src/Mystar.h	/^        MD5 md5;$/;"	m	class:Mystar
+md5Data	src/MD5.h	/^        unsigned char md5Data[256];$/;"	m	class:MD5
+md5Dig	src/MD5.h	/^        unsigned char *md5Dig;$/;"	m	class:MD5
+md5Len	src/MD5.h	/^        int md5Len;$/;"	m	class:MD5
+msgBuf	src/Mystar.h	/^        char msgBuf[256];$/;"	m	class:Mystar
+msgLen	src/Mystar.h	/^        int msgLen;$/;"	m	class:Mystar
+nic	src/Mystar.h	/^        char nic[32];$/;"	m	class:Mystar
+nickname	src/User.h	/^            char nickname[32];$/;"	m	class:User
+offset	src/Mystar.h	/^        u_int16_t offset;$/;"	m	class:Mystar
+on_button_connect_clicked	src/gMystar.cc	/^void gMystar::on_button_connect_clicked()   \/\/这里不用加static关键字$/;"	f	class:gMystar
+on_button_quit_clicked	src/gMystar.cc	/^void gMystar::on_button_quit_clicked()$/;"	f	class:gMystar
+orientation	src/eggtrayicon.h	/^  GtkOrientation orientation;$/;"	m	struct:_EggTrayIcon
+orientation_atom	src/eggtrayicon.h	/^  Atom orientation_atom;$/;"	m	struct:_EggTrayIcon
+p	src/Mystar.h	/^        pcap_t *p;$/;"	m	class:Mystar
+p_errbuf	src/Mystar.h	/^        char p_errbuf[PCAP_ERRBUF_SIZE];$/;"	m	class:Mystar
+p_fd	src/Mystar.h	/^        int p_fd;$/;"	m	class:Mystar
+p_netaddr	src/Mystar.h	/^        u_int32_t p_netaddr, p_netmask;$/;"	m	class:Mystar
+p_netmask	src/Mystar.h	/^        u_int32_t p_netaddr, p_netmask;$/;"	m	class:Mystar
+packetCount_SentFindServer	src/Mystar.h	/^        int packetCount_SentFindServer;$/;"	m	class:Mystar
+packetCount_SentName	src/Mystar.h	/^        int packetCount_SentName;$/;"	m	class:Mystar
+packetCount_SentPassword	src/Mystar.h	/^        int packetCount_SentPassword;$/;"	m	class:Mystar
+parent_class	src/eggtrayicon.c	/^static GtkPlugClass *parent_class = NULL;$/;"	v	file:
+parent_class	src/eggtrayicon.h	/^  GtkPlugClass parent_class;$/;"	m	struct:_EggTrayIconClass
+parent_instance	src/eggtrayicon.h	/^  GtkPlug parent_instance;$/;"	m	struct:_EggTrayIcon
+password	src/User.h	/^            char password[32];$/;"	m	class:User
+pkt_data	src/Mystar.h	/^        const u_char *pkt_data;$/;"	m	class:Mystar
+pkt_hdr	src/Mystar.h	/^        struct pcap_pkthdr *pkt_hdr;$/;"	m	class:Mystar	typeref:struct:Mystar::pcap_pkthdr
+pmsgBuf	src/Mystar.h	/^        char *pmsgBuf;$/;"	m	class:Mystar
+read_set	src/Mystar.h	/^        fd_set read_set;$/;"	m	class:Mystar
+refXml	src/gMystar.h	/^        Glib::RefPtr<Gnome::Glade::Xml> refXml;$/;"	m	class:gMystar
+selection_atom	src/eggtrayicon.h	/^  Atom selection_atom;$/;"	m	struct:_EggTrayIcon
+send_password	src/Mystar.cc	/^void Mystar::send_password()$/;"	f	class:Mystar
+send_username	src/Mystar.cc	/^void Mystar::send_username()$/;"	f	class:Mystar
+set_fakeAddress	src/User.cc	/^void User::set_fakeAddress(char *fakeAddress)$/;"	f	class:User
+set_nickname	src/User.cc	/^void User::set_nickname(const char *nickname)$/;"	f	class:User
+set_password	src/User.cc	/^void User::set_password(char *password)$/;"	f	class:User
+set_username	src/User.cc	/^void User::set_username(const char *username)$/;"	f	class:User
+sig_intr	src/mystar.c	/^static void sig_intr(int signo)$/;"	f	file:
+sigset_full	src/Mystar.h	/^        sigset_t sigset_full,sigset_zero;$/;"	m	class:Mystar
+sigset_zero	src/Mystar.h	/^        sigset_t sigset_full,sigset_zero;$/;"	m	class:Mystar
+stamp	src/eggtrayicon.h	/^  guint stamp;$/;"	m	struct:_EggTrayIcon
+state	src/MD5.h	/^  UINT4 state[4];                                   \/* state (ABCD) *\/$/;"	m	struct:__anon3
+system_tray_opcode_atom	src/eggtrayicon.h	/^  Atom system_tray_opcode_atom;$/;"	m	struct:_EggTrayIcon
+timeout	src/Mystar.h	/^        struct timespec timeout;$/;"	m	class:Mystar	typeref:struct:Mystar::timespec
+tray_icon_on_click	src/tray.cc	/^void tray_icon_on_click(GtkStatusIcon *status_icon, $/;"	f
+tray_icon_on_menu	src/tray.cc	/^void tray_icon_on_menu(GtkStatusIcon *status_icon, guint button, $/;"	f
+u2g	src/f.c	/^int u2g(char *inbuf,int inlen,char *outbuf,int outlen)$/;"	f
+u2g	src/gbk2utf8.cc	/^int u2g(char *inbuf,int inlen,char *outbuf,int outlen)$/;"	f
+uTemp	src/Mystar.h	/^        ULONG_BYTEARRAY uTemp;$/;"	m	class:Mystar
+ulValue	src/Mystar.h	/^	u_int32_t   ulValue;$/;"	m	union:__anon2
+user	src/Mystar.h	/^        User user;$/;"	m	class:Mystar
+username	src/User.h	/^            char username[32];$/;"	m	class:User
+~CodeConverter	src/CodeConverter.h	/^        ~CodeConverter()$/;"	f	class:CodeConverter
+~CodeConverter	src/f.cpp	/^        ~CodeConverter()$/;"	f	class:CodeConverter
