@@ -1,0 +1,65 @@
+# Target, compiler and objects.
+OBJ    = ./obj
+SRC    = ./src
+BIN    = ./bin
+CC     = g++
+EXEC   = $(BIN)/gMystar
+
+# Use for compile.
+CFLAGS = `pkg-config --cflags gtkmm-2.4 libglademm-2.4`
+# Use for link.
+CLIBS  = `pkg-config --libs gtkmm-2.4 libglademm-2.4`
+#FLAGS = -DDEBUG -Wall -pedantic -ansi
+FLAGS = -DDEBUG 
+
+all:	$(EXEC)
+
+$(EXEC): $(OBJ)/gMystar.o $(OBJ)/Mystar.o $(OBJ)/User.o $(OBJ)/myerr.o $(OBJ)/sendpacket.o $(OBJ)/blog.o $(OBJ)/MD5.o $(OBJ)/checkAndSetConfig.o $(OBJ)/CodeConverter.o $(OBJ)/gbk2utf8.o
+	$(CC) $^ $(FLAGS) -g -o $@ $(CLIBS) -lxerces-c -lxqilla -lnet -lpcap
+
+# -lxerces-c是xmldom库，-lnet和-lpcap是网络库
+
+
+$(OBJ)/gMystar.o: $(SRC)/gMystar.cc $(SRC)/gMystar.h
+	$(CC) $(FLAGS) -c $< -o $@ $(CFLAGS)
+
+$(OBJ)/Mystar.o: $(SRC)/Mystar.cc $(SRC)/Mystar.h
+	$(CC) $(FLAGS) -c $< -o $@
+
+$(OBJ)/gbk2utf8.o: $(SRC)/gbk2utf8.cc $(SRC)/Mystar.h
+	$(CC) $(FLAGS) -c $< -o $@
+
+$(OBJ)/CodeConverter.o: $(SRC)/CodeConverter.cc
+	$(CC) $(FLAGS) -c $< -o $@
+
+#OK!2009-01-20 18:32 finished!
+$(OBJ)/myerr.o: $(SRC)/myerr.cc $(SRC)/Mystar.h
+	$(CC) $(FLAGS) -c $< -o $@
+
+$(OBJ)/sendpacket.o: $(SRC)/sendpacket.cc $(SRC)/Mystar.h
+	$(CC) $(FLAGS) -c $< -o $@
+
+$(OBJ)/blog.o: $(SRC)/blog.cc $(SRC)/Mystar.h
+	$(CC) $(FLAGS) -c $< -o $@
+
+#OK!2009-01-19 finished!
+$(OBJ)/User.o: $(SRC)/User.cc $(SRC)/User.h
+	$(CC) $(FLAGS) -c $< -o $@
+
+$(OBJ)/checkAndSetConfig.o: $(SRC)/checkAndSetConfig.cc $(SRC)/Mystar.h
+	$(CC) $(FLAGS) -c $< -o $@
+
+$(OBJ)/MD5.o: $(SRC)/MD5.cc $(SRC)/MD5.h
+	$(CC) $(FLAGS) -c $< -o $@
+
+clean:
+	rm $(OBJ)/*.o
+run:
+	(cd $(BIN);sudo ./gMystar)
+runc:
+	(cd $(BIN);sudo ./gMystar --nogui)
+runt:
+	(cd $(BIN);sudo ./gMystar --test)
+install:
+	cp -v $(BIN)/gMystar ~/bin/
+	cp -v $(BIN)/gMystar.glade ~/bin/
