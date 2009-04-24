@@ -29,7 +29,7 @@ SRCS :=$(addprefix $(SRC)/, $(SRCS))
 OBJS := $(addprefix $(OBJ)/, $(OBJS))
 
 $(EXEC): $(OBJS) $(OBJ)/gMystar.o $(OBJ)/main.o
-	$(CC) --static $(CLIBS) -lnet -lpcap $^ -g -o $@
+	$(CC) $(CLIBS) -lnet -lpcap $^ -g -o $@
 
 $(OBJ)/gMystar.o : $(SRC)/gMystar.cc 
 	$(CC) --static $(FLAGS) $(CFLAGS) -lnotify -c $< -o $@
@@ -49,9 +49,9 @@ $(OBJ)/%.o : $(SRC)/%.cpp
 clean:
 	rm -rf $(OBJ)/*.o
 run:
-	(cd $(BIN);sudo ./gMystar)
+	(xterm -e "cd $(BIN);sudo ./gMystar")
 runc:
-	(cd $(BIN);sudo ./gMystar --nogui)
+	(xterm -e "cd $(BIN);sudo ./gMystar --nogui")
 runt:
 	(cd $(BIN);sudo ./gMystar --test)
 install:
@@ -62,6 +62,5 @@ install:
 	cp -v /usr/share/gMystar/bin/gMystar /usr/sbin/gMystar
 debug:
 	cd $(BIN);sudo gdb ./gMystar
-gMystar_HOME_r   = $(gMystar_HOME)/../gmystar
 release:
-	tar jcvf ~/Dropbox/Public/gmystar.tar.bz2 $(gMystar_HOME_r)/* --exclude $(gMystar_HOME_r)/doc --exclude $(gMystar_HOME_r)/dia --exclude $(gMystar_HOME_r)/ref
+	$(gMystar_HOME)/export

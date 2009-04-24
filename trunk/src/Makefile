@@ -32,7 +32,7 @@ $(EXEC): $(OBJS) $(OBJ)/gMystar.o $(OBJ)/main.o
 	$(CC) $(CLIBS) -lnet -lpcap $^ -g -o $@
 
 $(OBJ)/gMystar.o : $(SRC)/gMystar.cc 
-	$(CC) $(FLAGS) $(CFLAGS) -lnotify -c $< -o $@
+	$(CC) --static $(FLAGS) $(CFLAGS) -lnotify -c $< -o $@
 
 $(OBJ)/main.o : $(SRC)/main.cc 
 	$(CC) $(FLAGS) $(CFLAGS) -c $< -o $@
@@ -49,9 +49,9 @@ $(OBJ)/%.o : $(SRC)/%.cpp
 clean:
 	rm -rf $(OBJ)/*.o
 run:
-	(cd $(BIN);sudo ./gMystar)
+	(xterm -e "cd $(BIN);sudo ./gMystar")
 runc:
-	(cd $(BIN);sudo ./gMystar --nogui)
+	(xterm -e "cd $(BIN);sudo ./gMystar --nogui")
 runt:
 	(cd $(BIN);sudo ./gMystar --test)
 install:

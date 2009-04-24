@@ -1,0 +1,33 @@
+#!/bin/bash
+#===============================================================================
+#
+#          FILE:  import.sh
+# 
+#         USAGE:  ./import.sh 
+# 
+#   DESCRIPTION:  import project from svn
+# 
+#       OPTIONS:  ---
+#  REQUIREMENTS:  ---
+#          BUGS:  ---
+#         NOTES:  ---
+#        AUTHOR:  amoblin 崔 (), amoblin@gmail.com
+#       COMPANY:  bistu
+#       VERSION:  1.0
+#       CREATED:  2009年04月24日 16时10分20秒 CST
+#      REVISION:  ---
+#===============================================================================
+
+gMystar_HOME=~/Projects/gmystar
+cd $gMystar_HOME
+mkdir ~/Dropbox/Public/gmystar
+cp *  ~/Dropbox/Public/gmystar
+cp -r src ~/Dropbox/Public/gmystar
+cp -r shot ~/Dropbox/Public/gmystar
+cp -r data ~/Dropbox/Public/gmystar
+cd ~/Dropbox/Public/
+mkdir gmystar/bin gmystar/obj
+mkdir gmystar/obj/tinyxml
+find gmystar -type d -name ".svn" -exec rm -rf {} \;
+tar jcvf gmystar.tar.bz2 gmystar
+rm -rf gmystar
