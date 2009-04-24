@@ -286,7 +286,6 @@ void *gMystar::change_ui(void *a)
 {
     while(flag)
     {
-        cout<<"change ui...."<<endl;
         int status = mystar->get_status();
         switch(status)
         {
