@@ -1,2 +1,2 @@
 AUTOMAKE_OPTIONS = foreign
-SUBDIRS = src doc tex
+SUBDIRS = bin data src doc

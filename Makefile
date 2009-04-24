@@ -10,9 +10,9 @@ CC     = g++
 EXEC   = $(BIN)/gMystar
 
 # Use for compile.
-CFLAGS = `pkg-config --cflags gtkmm-2.4 libglademm-2.4`
+CFLAGS = `pkg-config --cflags dbus-glib-1 libglademm-2.4 gtkmm-2.4 libnotifymm-1.0 libnm_glib`
 # Use for link.
-CLIBS  = `pkg-config --libs gtkmm-2.4 libglademm-2.4`
+CLIBS  = `pkg-config --libs dbus-glib-1 gtkmm-2.4 libglademm-2.4 libnotifymm-1.0 libnm_glib`
 #FLAGS = -DDEBUG -Wall -pedantic -ansi
 FLAGS = -DDEBUG 
 #xml flag
@@ -20,7 +20,7 @@ XMLFLAGS = `pkg-config libxml++-2.6 --cflags --libs`
 
 all:	$(EXEC)
 
-SRCS := MD5.cc checkAndSetConfig.cc User.cc blog.cc sendpacket.cc myerr.cc CodeConverter.cc gbk2utf8.cc Mystar.cc tinyxml.cpp tinystr.cpp tinyxmlerror.cc tinyxmlparser.cpp
+SRCS := MD5.cc checkAndSetConfig.cc User.cc blog.cc sendpacket.cc myerr.cc gbk2utf8.cc Mystar.cc tinyxml/tinyxml.cpp tinyxml/tinystr.cpp tinyxml/tinyxmlerror.cc tinyxml/tinyxmlparser.cpp
 
 OBJS := $(addsuffix .o, $(basename $(SRCS)))
 
@@ -28,23 +28,26 @@ SRCS :=$(addprefix $(SRC)/, $(SRCS))
 
 OBJS := $(addprefix $(OBJ)/, $(OBJS))
 
-${EXEC}: $(OBJS) $(OBJ)/gMystar.o $(OBJ)/main.o
-	${CC} ${CLIBS} -lnet -lpcap $^ -g -o $@
+$(EXEC): $(OBJS) $(OBJ)/gMystar.o $(OBJ)/main.o
+	$(CC) --static $(CLIBS) -lnet -lpcap $^ -g -o $@
 
 $(OBJ)/gMystar.o : $(SRC)/gMystar.cc 
-	${CC} $(FLAGS) $(CFLAGS) -c $< -o $@
+	$(CC) --static $(FLAGS) $(CFLAGS) -lnotify -c $< -o $@
 
 $(OBJ)/main.o : $(SRC)/main.cc 
-	${CC} $(FLAGS) $(CFLAGS) -c $< -o $@
+	$(CC) $(FLAGS) $(CFLAGS) -c $< -o $@
+
+$(OBJ)/Mystar.o : $(SRC)/Mystar.cc 
+	$(CC) $(FLAGS) `pkg-config --cflags dbus-glib-1 libnm_glib` -c $< -o $@
 
 $(OBJ)/%.o : $(SRC)/%.cc
-	${CC} $(FLAGS) -c $< -o $@
+	$(CC) $(FLAGS) `pkg-config --cflags dbus-glib-1 libnm_glib` -c $< -o $@
 
 $(OBJ)/%.o : $(SRC)/%.cpp
-	${CC} $(FLAGS) -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	rm $(OBJ)/*.o
+	rm -rf $(OBJ)/*.o
 run:
 	(cd $(BIN);sudo ./gMystar)
 runc:
@@ -52,12 +55,13 @@ runc:
 runt:
 	(cd $(BIN);sudo ./gMystar --test)
 install:
-	#mkdir /etc/gMystar
-	cp -v $(BIN)/gMystar /usr/sbin/gMystar
-	cp -v $(DATA)/gMystar.glade /etc/gMystar/ui.glade
-	cp -v $(DATA)/disconnect.png /etc/gMystar/disconnect.png
-	cp -v $(DATA)/connect.png /etc/gMystar/connect.png
+	#mkdir /usr/share/gMystar
+	cp -vr $(BIN) /usr/share/gMystar
+	cp -vr $(DATA) /usr/share/gMystar
+	#ln -s /usr/share/gMystar/bin/gMysar /usr/sbin/gMystar
+	cp -v /usr/share/gMystar/bin/gMystar /usr/sbin/gMystar
 debug:
 	cd $(BIN);sudo gdb ./gMystar
+gMystar_HOME_r   = $(gMystar_HOME)/../gmystar
 release:
-	tar zcvf ~/Dropbox/Public/gmystar.tar.gz $(gMystar_HOME)/* --exclude $(gMystar_HOME)/doc --exclude $(gMystar_HOME)/dia
+	tar jcvf ~/Dropbox/Public/gmystar.tar.bz2 $(gMystar_HOME_r)/* --exclude $(gMystar_HOME_r)/doc --exclude $(gMystar_HOME_r)/dia --exclude $(gMystar_HOME_r)/ref

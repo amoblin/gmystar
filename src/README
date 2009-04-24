@@ -1,0 +1,41 @@
+blog.cc					blog算法
+checkAndSetConfig.cc	读写配置文件
+Config.h				
+cscope.in.out			cscope生成
+cscope.out				cscope生成
+cscope.po.out			cscope生成
+gbk2utf8.cc				编码转换，解决服务器发送过来的数据的转换
+gMystar.cc				锐捷图形界面源程序
+gMystar.h				锐捷图形界面头文件
+index.sh				生成tag和cscope文件的脚本
+main.cc					主程序
+Makefile				
+MD5.cc					md5加密算法，用于锐捷密码的md5加密
+MD5.h					md5头文件
+myerr.cc				错误
+Mystar.cc				锐捷源程序
+Mystar.h				锐捷头文件
+README					本文件
+sendpacket.cc			发包
+tags					ctags生成的tag文件
+tinyxml/				一个xml dom处理库
+User.cc					用户类
+User.h					用户类头文件
+
+Mystar： 读取配置文件,进入循环检测网卡状态：
+		若断开，则一直循环等待
+		若连接，则初始化网卡,认证,进入循环激活
+			若断开，则激活循环
+			若ctrl+c，则结束程序
+
+gMystar
+
+
+status:
+	0:网卡已断开...
+	1:...
+	2:寻找服务器...
+	3:发送用户名...
+	4:发送密码...
+	5:认证成功...
+	6:认证失败...

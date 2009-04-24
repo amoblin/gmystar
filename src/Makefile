@@ -1,5 +1,5 @@
 # Target, compiler and objects.
-gMystar_HOME   = .
+gMystar_HOME   = ..
 OBJ    = $(gMystar_HOME)/obj
 DOC    = $(gMystar_HOME)/doc
 DIA    = $(gMystar_HOME)/dia
@@ -47,7 +47,7 @@ $(OBJ)/%.o : $(SRC)/%.cpp
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	rm $(OBJ)/*.o
+	rm -rf $(OBJ)/*.o
 run:
 	(cd $(BIN);sudo ./gMystar)
 runc:
@@ -55,12 +55,13 @@ runc:
 runt:
 	(cd $(BIN);sudo ./gMystar --test)
 install:
-	#mkdir /etc/gMystar
-	cp -v $(BIN)/gMystar /usr/sbin/gMystar
-	cp -v $(DATA)/gMystar.glade /etc/gMystar/ui.glade
-	cp -v $(DATA)/disconnect.png /etc/gMystar/disconnect.png
-	cp -v $(DATA)/connect.png /etc/gMystar/connect.png
+	#mkdir /usr/share/gMystar
+	cp -vr $(BIN) /usr/share/gMystar
+	cp -vr $(DATA) /usr/share/gMystar
+	#ln -s /usr/share/gMystar/bin/gMysar /usr/sbin/gMystar
+	cp -v /usr/share/gMystar/bin/gMystar /usr/sbin/gMystar
 debug:
 	cd $(BIN);sudo gdb ./gMystar
+gMystar_HOME_r   = $(gMystar_HOME)/../gmystar
 release:
-	tar zcvf ~/Dropbox/Public/gmystar.tar.gz $(gMystar_HOME)/* --exclude $(gMystar_HOME)/doc --exclude $(gMystar_HOME)/dia
+	tar jcvf ~/Dropbox/Public/gmystar.tar.bz2 $(gMystar_HOME_r)/* --exclude $(gMystar_HOME_r)/doc --exclude $(gMystar_HOME_r)/dia --exclude $(gMystar_HOME_r)/ref
