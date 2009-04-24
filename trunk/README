@@ -16,18 +16,37 @@ mystar Ver0.1
 ps: 本程序在redhat7.2/9.0 + libnet v1.1.1 + libpcap v0.8.3 + 沁园 + 2004.09下通过
 代码写的很糟糕，不要笑偶 ^_^
 
+***************************************************************************
+csip amoblin@gmail.com
 
 接下来是我添加和更改的:
 
-bin		可执行文件所在目录
-dia		程序相关的源图
-doc		程序相关文档
-obj		中间模块文件
-pdf		程序相关pdf文档
-png		程序相关的png图
-shot	程序运行截图
-tex		程序相关tex源文档
-ref		参考资料
+aclocal.m4			aclocal
+AUTHORS				配置要求
+autom4te.cache/		文件夹
+autoscan.log		autoscan命令生成
+back_windows.sh		自己编写的转本工程下unix格式文本文档为dos文本文档的脚本
+bin/				可执行文件所在目录
+ChangeLog			开发日志
+configure.in		autoscan命令生成的configure.scan改名后修改得到
+COPYING
+data				图形设计，配置文件
+depcomp
+dia					程序相关的源图
+dia_png				程序相关的png图
+doc					程序相关文档
+GPL					GNU要求
+install-sh
+Makefile			自己写的Makefile文件
+Makefile.am			自己写的，用于生成Makefile文件
+missing
+NEWS
+obj					中间模块文件
+pdf					程序相关pdf文档
+README				本文档
+ref					参考资料
+shot				程序运行截图
+src					程序源代码
 
 
 xml库：xqilla, xerces-c
@@ -38,5 +57,3 @@ libxqilla-dev
 libxerces-c2-dev
 libboost-dev
 libgtkmm-2.4-dev
-
-
