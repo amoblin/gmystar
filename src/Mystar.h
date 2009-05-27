@@ -1,3 +1,14 @@
+/*****************************************************
+ *  Mystar.h
+ *
+ *  Copyright (C) 2009  csip(amoblin@gmail.com)
+ *
+ *  ChangeLog:
+ *
+ *  Description:
+ *	Warning: this file should be in UTF-8.
+ *  
+ ******************************************************/
 #include <stdlib.h>
 #include <iostream>
 
@@ -43,14 +54,16 @@ class Mystar
 {
     public:
         Mystar();
+
         void authen();
         static void help();
         char *gbk2utf8(char *src);
-        User user;
-        bool autologin;
         int save_file();
         int get_status();
         void logout(int signo);
+
+        User user;
+        bool autologin;
         libnm_glib_state nm_state;
         libnm_glib_ctx *nm_ctx;
 

@@ -1,3 +1,14 @@
+/**************************************************
+ *  sendpacket.cc
+ *
+ *  Copyright (C) 2009  csip(amoblin@gmail.com)
+ *
+ *  ChangeLog:
+ *
+ *  Description:
+ *	Warning: this file should be in UTF-8.
+ *  
+ **************************************************/
 #include "Mystar.h"
 int Mystar::SendFindServerPacket (libnet_t * l)
 {

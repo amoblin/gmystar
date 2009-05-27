@@ -1,10 +1,21 @@
+/**************************************************
+ *  gMystar.cc
+ *
+ *  Copyright (C) 2009  csip(amoblin@gmail.com)
+ *
+ *  ChangeLog:
+ *
+ *  Description:
+ *	Warning: this file should be in UTF-8.
+ *  
+ *************************************************/
 #include "gMystar.h"
 #include <pthread.h>
 /* static member */
 Mystar *gMystar::mystar;
 bool gMystar::flag;
 Glib::RefPtr<Gtk::StatusIcon> gMystar::status_icon;
-Window *gMystar::MainWindow;
+//Window *gMystar::MainWindow;
 CheckButton *gMystar::autologin_checkbutton;
 Button *gMystar::connect_button;
 Label *gMystar::status_label;
@@ -197,9 +208,6 @@ gMystar::gMystar()
     */
 
     add(*main_window);
-    set_focus(*connect_button);
-    //set_position(100,100);
-    //show();
 	show_all();
 
     if(mystar->autologin)
@@ -261,16 +269,17 @@ void gMystar::show_message(const char *message)
 }
 void gMystar::on_tray_clicked()
 {
-    if(MainWindow->is_visible())
+    //if(MainWindow->is_visible())
+    if(this->is_visible())
         hide_window();
     else
         show_window();
 }
 void gMystar::show_window()
 {
-    MainWindow->move(window_x, window_y);
+    this->move(window_x, window_y);
     cout<<"resume the position("<<window_x<<","<<window_y<<")"<<endl;
-    MainWindow->show();
+    this->show();
 }
 void gMystar::hide_window()
 {

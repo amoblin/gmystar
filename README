@@ -47,6 +47,7 @@ README				本文档
 ref					参考资料
 shot				程序运行截图
 src					程序源代码
+makeall				生成程序源代码清单的bash脚本
 
 
 xml库：xqilla, xerces-c

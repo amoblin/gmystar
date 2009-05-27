@@ -1,3 +1,14 @@
+/************************************************
+ *  gbk2utf8.cc
+ *
+ *  Copyright (C) 2009  csip(amoblin@gmail.com)
+ *
+ *  ChangeLog:
+ *
+ *  Description:
+ *	Warning: this file should be in UTF-8.
+ *  
+ *************************************************/
 #include "Mystar.h"
 #include <iconv.h>
 /*

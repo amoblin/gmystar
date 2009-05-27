@@ -1,4 +1,15 @@
+###############################
+# Makefile
+#
+# Copyright (C) 2009  csip(amoblin@gmail.com)
+#
+# ChangeLog:
+#
+# Description:
+# Warning: this file should be in UTF-8.
+#
 # Target, compiler and objects.
+###############################
 gMystar_HOME   = .
 OBJ    = $(gMystar_HOME)/obj
 DOC    = $(gMystar_HOME)/doc
@@ -62,5 +73,8 @@ install:
 	cp -v /usr/share/gMystar/bin/gMystar /usr/sbin/gMystar
 debug:
 	cd $(BIN);sudo gdb ./gMystar
+gMystar_HOME_r   = $(gMystar_HOME)/../gmystar
 release:
-	$(gMystar_HOME)/export
+	tar jcvf ~/Dropbox/Public/gmystar.tar.bz2 $(gMystar_HOME_r)/* --exclude $(gMystar_HOME_r)/doc --exclude $(gMystar_HOME_r)/dia --exclude $(gMystar_HOME_r)/ref
+	$(gMystar_HOME)/makeall
+	$(gMystar_HOME)/back_windows

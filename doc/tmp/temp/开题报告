@@ -1,0 +1,96 @@
+IEEE:the Institute of Electrical and Electronics Engineers 电气与电子工程师学会
+
+EAP:Extensible Authentication Protocol扩展认证协议
+
+EAP类型：
+	1. Message Digest 5 Challenge(MD5-Challenge) 
+	2.EAP-Transport Level Security(EAP-TLS)
+
+CHAP: Challenge Handshake Authentication Protocol挑战握手验证协议
+
+LAN:Local Area Network
+
+EAPOL:EAP over LAN
+
+RADIUS:Remote Authentication Dial In User Service远程用户拨号认证系统
+
+AAA:Authentication,Authorization and Accounting 认证，授权和记账
+
+Authentication Server可以采用标准的Radius认证服务器，也可以选用业务交换机。
+
+IEEE 802.1x 的体系结构中包括三个部分：Supplicant System，用户接入设备；Authenticator System，接入控制单元；Authentication Sever System，认证服务器。
+
+　　在用户接入层设备（如LanSwitch）实现 IEEE802.1x的认证系统部分，即Authenticator；IEEE802.1x的客户端一般安装在用户PC中，典型的为Windows XP操作系统自带的客户端； IEEE802.1x的认证服务器系统一般驻留在运营商的AAA中心。
+
+　　Supplicant与Authenticator间运行IEEE802.1x定义的EAPOL协议；Authenticator 与 Authentication Sever 间同样运行 EAP 协议，EAP 帧中封装了认证数据，将该协议承载在其他高层次协议中，如 Radius，以便穿越复杂的网络到达认证服务器。 
+
+NAS:Network Access Server
+
+802.1x,EAPoL,RADIUS的关系
+
+reference:
+
+Timm. 基于802.1x认证技术的应用分析[EB/OL] http://zhangbaoli.bokee.com/4594596.html
+
+和kstar的比较
+
+一、综述
+	1.Linux桌面应用越来越广泛
+	2.局域网认证计费在学校广泛存在
+	3.锐捷认证是认证计费中最流行的
+	4.Windows下的锐捷已满足普通用户的需求，但不支持双网卡，所以在用Vmware时会冲突
+	5.Linux下的锐捷认证，官方有Supplicant for Linux,目前最高版本v1.1.1，非官方有NetXRay写的mystar，又有kstar
+
+
+
+
+	锐捷官方文档：
+	随着我国教育信息化工程的深入，各高等院校的网络建设也日趋完善。除了不断建设包括教学、科研、图书馆、实验室、宿舍楼等网络以实现高校网络的整体性，高校整体网络对稳定、运营效率和管理等方面的要求也越来越高。同时，校园网络在建设中呈现出两大特点：一方面，随着高校学生不断增多、教学信息化的要求增多，校园网建设的信息点数量迅速攀升，网络规模也在不断扩大，这要求校园网的数据传输能力也要随之增强，因此高效运行是高校校园网的最基本要求；另一个方面，在实现高效运行的校园网络同时，管理工作不可或缺，以保证网络安全、稳定运行，确保校园网的整体运营。这两个特点对于信息点庞大的宿舍网来说表现得尤其突出，因此，建设一个完美的宿舍网，除了要保证高效、安全的运行，还要实现灵活的认证计费和有效的管理。
+
+
+	我校网络管理使用锐捷认证计费系统，
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	研究意义： 锐捷客户端软件，是局域网内认证计费系统的重要软件,方便Linux用户上网。
+	研究的现状： 现在的锐捷客户端软件，Windows下有Ruijie_Supplicant，目前版本到了V3.22，界面友好，使用方便；而在Linux下，有mystar等，但界面
+	已有成果：
+	发展趋势：应用程序的跨平台性，像Web Application，像Java，像C#，越来越多的库实现了跨平台，那么我们不需要移植开发了。
+二、研究内容
+	研究方向：Linux下利用C++编程技术实现锐捷客户端的开发
+	内容：
+	系统功能：输入用户名，密码，发送认证；
+三、实现方法及预期目标
+	初步方案：分析mystar源码，对其进行优化重构，增添图形界面
+	重点：面向过程到面向对象的重构
+	难点：锐捷网络认证相关协议的学习和实现，md5加密算法的实现
+	环境：Ubuntu Linux(Jaunty Jackalope), g++ 4.3.3, vim 7.2.29 
+五、对进度的具体安排（要求详细周到)
+
+2.23-3.6	1-2		任务书	9-10
+3.9-3.20	3-4		开题	11-12
+
+3.30-4.10	6-7		开题报告	14-15
+4.13-5.1	8-10	检查记录表	16-18
+
+5.11-5.29	12-14	提交毕业论文	20-22
+6.1-6.5		15		答辩前准备		23
+6.8-6.19	16-17	答辩	24-25
+
+六、参考文献

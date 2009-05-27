@@ -18,16 +18,22 @@
 #      REVISION:  ---
 #===============================================================================
 
-gMystar_HOME=~/Projects/gmystar
-cd $gMystar_HOME
-mkdir ~/Dropbox/Public/gmystar
-cp *  ~/Dropbox/Public/gmystar
-cp -r src ~/Dropbox/Public/gmystar
-cp -r shot ~/Dropbox/Public/gmystar
-cp -r data ~/Dropbox/Public/gmystar
+PROJECT_NAME=gmystar
+PROJECT_HOME=~/Projects/$PROJECT_NAME
+cd $PROJECT_HOME
+PROJECT_tmp=$PROJECT_NAME-`date +%Y-%m-%d`
+PROJECT_tmp_uri=~/Dropbox/Public/$PROJECT_tmp
+mkdir -p $PROJECT_tmp_uri
+
+cp * $PROJECT_tmp_uri
+cp -r src $PROJECT_tmp_uri
+cp -r shot $PROJECT_tmp_uri
+cp -r data $PROJECT_tmp_uri
+
 cd ~/Dropbox/Public/
-mkdir gmystar/bin gmystar/obj
-mkdir gmystar/obj/tinyxml
-find gmystar -type d -name ".svn" -exec rm -rf {} \;
-tar jcvf gmystar.tar.bz2 gmystar
-rm -rf gmystar
+mkdir -p $PROJECT_tmp/bin $PROJECT_tmp/obj
+mkdir -p $PROJECT_tmp/obj/tinyxml
+
+find $PROJECT_temp -type d -name ".svn" -exec rm -rf {} \;
+tar jcvf $PROJECT_tmp.tar.bz2 $PROJECT_tmp
+rm -rf $PROJECT_tmp

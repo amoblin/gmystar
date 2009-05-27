@@ -1,3 +1,14 @@
+/***************************************************
+ *  blog.cc
+ *
+ *  Copyright (C) 2009  csip(amoblin@gmail.com)
+ *
+ *  ChangeLog:
+ *
+ *  Description:
+ *	Warning: this file should be in UTF-8.
+ *  
+ ****************************************************/
 #include "Mystar.h"
 
 static int blogIsInitialized = 0;
@@ -5,7 +16,7 @@ static unsigned char m_IP[4];
 static unsigned char m_NetMask[4];
 static unsigned char m_NetGate[4];
 static unsigned char m_DNS1[4];
-static unsigned char circleCheck[2];	//ÄÇÁ½¸ö¹íÖµ
+static unsigned char circleCheck[2];	//é‚£ä¸¤ä¸ªé¬¼å€¼
 
 //configure the 4 parameters Blog() and FillNetParameter() need.
 void Mystar::InitializeBlog (const unsigned char *m_ip, const unsigned char *m_netmask,
@@ -85,7 +96,7 @@ unsigned char Mystar::Alog (unsigned char BForAlog)
   iRt = (~c) & 0xff;
   return iRt;
 }
-//ÄÇ°ï¼Ò»ïÃÇ£¬µ¥¿¿Õâ¸öËã·¨¾ÍÏëÇø±ğÊµ´ï¿Í»§¶ËºÍ·ÇÊµ´ï¿Í»§¶Ë -_- !! 
+//é‚£å¸®å®¶ä¼™ä»¬ï¼Œå•é è¿™ä¸ªç®—æ³•å°±æƒ³åŒºåˆ«å®è¾¾å®¢æˆ·ç«¯å’Œéå®è¾¾å®¢æˆ·ç«¯ -_- !! 
 //The only use of function Blog() is to work out circleCheck[2],
 //with and only with the help of 4 parameters----m_IP, m_NetMask, m_NetGate, m_DNS1
 void Mystar::Blog (void)
