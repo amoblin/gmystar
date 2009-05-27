@@ -1,0 +1,249 @@
+/*============模板名：蓝色幻想 作者：博客动力===============*/
+div{
+  word-break:break-all;	
+}
+a:link {
+	FONT-SIZE: 9pt; 
+	COLOR:#bfdefb; 
+   TEXT-DECORATION: none;
+}
+a:visited {
+	font-family: Arial,Helvetica,sans-serif;
+	FONT-SIZE: 9pt; 
+	COLOR: #bfdefb; 
+   TEXT-DECORATION: none;
+}
+a:hover {
+	font-family: Arial,Helvetica,sans-serif;
+	FONT-SIZE: 9pt; 
+	COLOR:#c4fd9b; 
+	TEXT-DECORATION: underline;
+}
+
+/*===============定义Blog名称=====================*/
+h1{
+	font-family: Arial,Helvetica,sans-serif;
+	font-size:11pt;
+	font-weight: bold;
+	color:#bfdefb;
+}
+h1.title{  
+	float: left;
+	margin: 16px 0px 0px 5px;
+	padding: 0px;
+}
+h1.title a:link{
+   font-family: Arial,Helvetica,sans-serif;
+	FONT-SIZE: 9pt; 
+	COLOR:#bfdefb; 
+   TEXT-DECORATION: none;
+}
+h1.title a:visited{
+   font-family: Arial,Helvetica,sans-serif;
+	FONT-SIZE: 9pt; 
+	COLOR:#bfdefb; 
+   TEXT-DECORATION: none;
+}
+h1.title a:hover{
+	font-family: Arial,Helvetica,sans-serif;
+	FONT-SIZE: 9pt; 
+	COLOR:#c4fd9b; 
+	TEXT-DECORATION: underline;
+}
+h2{
+   font-family: Arial,Helvetica,sans-serif;
+	font-size:9pt;
+	font-weight: bold;
+	color:#bfdefb;		
+}
+h2.diaryTitle{
+	padding: 5px 0px 0px 5px;	
+	margin: 0;
+}
+h3{
+   font-family: Arial,Helvetica,sans-serif;
+	font-size:9pt;
+	font-weight: bold;
+	color:#c4fd9b;
+	text-align: left;
+   height: 40px;
+	background-image: url(http://blog.blogchina.com/template/template37/img/img_h.gif);
+	background-repeat: no-repeat;
+	margin: 0px 0px 0px 5px;
+	padding: 13px 0px 0px 30px;
+}
+/*===============每一栏的标题=====================*/
+h4{
+   font-family: Arial,Helvetica,sans-serif;
+	font-size:9pt;
+	font-weight: normal;
+	color:#fff;
+	text-align: left;
+	margin: 0px 0px 10px 0px;
+   padding: 13px 0px 0px  25px;
+	height: 38px;	
+	float: left;
+}
+/*===============日志标题=====================*/
+h5{
+   font-family: Arial,Helvetica,sans-serif;
+	font-size:9pt;
+	font-weight: bold;
+	color: #fff;	
+	margin-top: 13px;	
+	margin-left: 120px;
+	text-align: left;
+}
+body{
+   padding: 0;
+	margin: 0;
+	background-color:#003f7f;
+	SCROLLBAR-FACE-COLOR: #004487;
+	SCROLLBAR-HIGHLIGHT-COLOR: #002f5d;
+	SCROLLBAR-SHADOW-COLOR: #e8e8e8;
+	SCROLLBAR-3DLIGHT-COLOR:#bfdefb;
+	SCROLLBAR-TRACK-COLOR: #004487;
+	SCROLLBAR-ARROW-COLOR: #00ccff;
+	SCROLLBAR-DARKSHADOW-COLOR:#004487;
+	text-align: center;
+}
+
+td{
+	font-size:12pt;
+	color:#bfdefb;
+}
+/*=============================定义 ID 样式===============================================*/
+div#container{
+   width: 868px;
+	margin: 0 auto 0 auto;
+	background-image: url(http://blog.blogchina.com/template/template37/img/img_bj_2.jpg);
+	background-repeat: repeat-y;
+}
+
+div#header{
+	height:170px;
+	width:756px;
+	margin-bottom: 5px;
+	margin-left:5px;
+   border-right:5px solid #004487;
+	border-left:5px solid #004487;
+	border-bottom:5px solid #004487;
+	background-image:  url(http://blog.blogchina.com/template/template37/img/img_header.jpg);
+	background-image: url(http://blog.blogchina.com/template/template37/img/img_header.jpg);
+	background-repeat: no-repeat; 
+}
+
+/*===定义登陆输入框样式===*/
+.textStyle{
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 9pt;
+	color:#bfdefb;
+	width: 430px;
+	background-color: #0050a0;
+	border:2px solid #004487;
+	text-decoration: none;
+}
+/*===定义按纽样式===*/
+input{
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 9pt;
+	color: #bfdefb;
+	text-decoration: none;
+	background-color: #2779cb;
+	height: 19px;
+	width: auto;
+	border:1px solid #004487;
+	line-height: 18px;
+	margin-right: 5px;
+	margin-top:5px;
+	margin-bottom: 5px;
+}
+input.inputStyle{
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 9pt;
+	color: #bfdefb;
+	text-decoration: none;
+	background-color: #2779cb;
+	height: 19px;
+	width: auto;
+	border:1px solid #004487;
+	line-height: 18px;
+	margin-right: 5px;
+	margin-top:5px;
+	margin-bottom: 5px;
+}
+ /*=======单篇日志=======*/
+div.entity{
+	 font-family: Arial,Helvetica,sans-serif;
+	 font-size:12pt;
+	 line-height: 24px;
+	 text-align: left;
+	 width:766px;
+	 background-color:#2779cb;
+	 border:5px solid #004487;
+	 line-height:20px; 
+	 margin:0px 0px 0px 5px; 
+}
+/*=======栏目=======*/
+div#category{
+    margin-left:12px;
+	 margin-right:12px;	
+	 color: #004487;
+	 height: 30px;
+	 padding-top:12px;
+	 margin: 5px;
+}
+div.operation{
+    width: 766px;
+	 text-align: center;
+    margin: 10px 5px 0px 5px;
+}
+p{
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 9pt;
+	color:#bfdefb;
+	text-align: left;
+	margin:10px 5px 10px 8px;	
+}
+p.diaryFoot{
+   text-align: right;
+	height: 10px;
+	padding: 2px;
+	color:#bfdefb;
+}
+p.trackback{
+	font-style: italic;
+}
+table.comment{
+	 margin-left: 130px;
+	 width: 570px;
+}
+/*=================================底部===============================*/
+div#footer{
+   width:760px;
+	height: 20px;
+	margin-top: 0px; 
+	text-align: center;
+	padding: 0px;
+	margin:0px auto 0px 6px;
+	
+}
+div#footer a:link {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 9px;
+	color:Black;
+	text-decoration: none;
+}
+div#footer a:visited {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 9px;
+   color: Black;
+	text-decoration: none;
+}
+div#footer a:hover {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 9px;
+	color: #0099FF;
+	text-decoration: none;
+}
+

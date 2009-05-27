@@ -1,0 +1,14 @@
+var data=new Array();data[0]=new Array();data[0][0]='抽象类和接口的区别';data[0][1]='http://kb.cnblogs.com/page/42159/';data[1]=new Array();data[1][0]='const 和 static readonly 区别？';data[1][1]='http://kb.cnblogs.com/page/42050/';data[2]=new Array();data[2][0]='JavaScript 中 substr 和 substring的区别';data[2][1]='http://www.cnblogs.com/sandheart/archive/2005/06/04/167789.html';data[3]=new Array();data[3][0]='字符集编码ANSI和UNICODE';data[3][1]='http://www.cnblogs.com/zyk/archive/2004/11/17/64747.html';data[4]=new Array();data[4][0]='HtmlInputFile和FileUpLoad的区别';data[4][1]='http://space.cnblogs.com/question/503/';data[5]=new Array();data[5][0]='EXE和DLL之间的区别是什么';data[5][1]='http://space.cnblogs.com/question/812/';data[6]=new Array();data[6][0]='数据采集器与扫描枪,盘点机的区别';data[6][1]='http://space.cnblogs.com/group/topic/3557/';data[7]=new Array();data[7][0]='谁能说说 JQuery 和 Ext JS 的区别?';data[7][1]='http://space.cnblogs.com/group/topic/756/';
+if(data.length > 0)
+{
+    for(var i = 0; i < data.length; i++)
+    {
+        if (i > 0)
+            document.write("<br>");
+        document.write("<a href='");
+        document.write(data[i][1]);
+        document.write("' target='_blank'>");
+        document.write(data[i][0]);
+        document.write("</a>");
+    }
+}

@@ -1,0 +1,276 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+<title>RADIUS协议：认证与计费的鼻祖 夜行人 </title>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312">
+<meta name="keywords" content="RADIUS协议：认证与计费的鼻祖 夜行人">
+<meta name="description" content="RADIUS协议：认证与计费的鼻祖 夜行人"> 
+<link href="index.php_files/css_002.css" rel="stylesheet" type="text/css">
+<link href="index.php_files/css.css" rel="stylesheet" type="text/css" id="Mycss">
+<style rel="stylesheet" type="text/css">
+<!--
+-->
+</style>
+<style rel="stylesheet" type="text/css">
+<!--
+#MainTable .head .deletemodule,#MainTable .head .eidtmodule,#MainTable .head .post,#MainTable ul.listnews li.del a,#MainTable ul.listnews li.edit a,#MainTable .dragTable .middle .word .operate,.delcomment,.deletemodule,.eidtmodule{display:none;}
+-->
+</style>
+<style rel="stylesheet" type="text/css">
+<!--
+#MainTable .head .deletemodule{display:none;}
+-->
+</style>
+<meta content="MSHTML 6.00.2900.2963" name="GENERATOR">
+<script language="JavaScript" src="index.php_files/swfobject.js"></script>
+<script language="JavaScript" src="index.php_files/cookie.js"></script>
+<script language="JavaScript" src="index.php_files/default.js"></script></head><body><div class="dragEdits" id="dragEdits" style="background: transparent none repeat scroll 0% 0%; overflow: hidden; display: none; position: absolute; width: 725px; height: 430px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; top: 180px; z-index: 9999;"><iframe name="jobedit" id="jobedit" src="index.php_files/a_002.html" height="100%" scrolling="no" width="100%"></iframe></div><form id="formi" name="formi" method="post" action="ajax.php?inc=change_module" target="phpframe"><input name="module" value="&lt;?=$VlogCfg[module]?&gt;" type="hidden"></form><iframe id="phpframe" name="phpframe" marginwidth="0" src="index.php_files/a_002.html" frameborder="0" height="0" width="0"></iframe>
+
+<!--这是顶部登录框-->
+<script language="JavaScript">
+var lfjid="";
+var lfjuid='';
+var www_url='http://mail.sxu.cn/blog';
+var blog_url='http://mail.sxu.cn/blog';
+var ThisBlogUrl='http://mail.sxu.cn/blog/?uid=1368';
+</script>
+<script src="index.php_files/toolbar.js"></script><div id="Toolbar"><div style="float: left; padding-top: 4px;">　<a href="http://mail.sxu.cn/blog/blog.php" title="网站首页"><img src="index.php_files/menulogo.gif" alt="网站首页" border="0" height="18"></a></div><div style="float: left; padding-top: 7px;"><span id="login_div">  　<a href="http://mail.sxu.cn/blog/login.php">登陆</a>　|　<a href="http://mail.sxu.cn/blog/reg.php" target="_blank">注册</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:" onclick="copyTXT(this)" title="点击复制此网址">http://mail.sxu.cn/blog/?uid=1368</a></span></div><form name="formsearch" method="post" action="http://mail.sxu.cn/blog/search.php?searchTable=article&amp;type=title" target="_blank"><div style="float: right; padding-top: 10px;">　<a href="#" onclick="searchpost()">搜索</a>&nbsp;&nbsp;</div> <div style="float: right; padding-top: 5px;">　    <input name="keyword" class="notice" value="请输入关键字" onfocus="if(this.value=='请输入关键字')this.value='';" onmouseout="if(this.value=='')this.value='请输入关键字'" type="text"></div></form></div><table id="BodyTable" align="center" border="0" cellpadding="0" cellspacing="0" width="">
+  <tbody>
+    <tr>
+      <td>
+	  <table id="header" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tbody>
+            <tr>
+              <td align="center"><div id="webname"><a href="http://mail.sxu.cn/blog/index.php?uid=1368" editurl="ajax.php?inc=editblogname">夜行人</a></div></td>
+            </tr>
+          </tbody>
+        </table>
+        <table id="MenuTable" onmouseover="if(getCookie('showDoEdit')==1){document.getElementById('EditMenuTable').style.display=''}" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tbody>
+            <tr>
+              <td>
+<div id="navigation">
+<a href="http://mail.sxu.cn/blog/">返回首页</a>
+<a href="http://mail.sxu.cn/blog/index.php?file=listlog&amp;uid=1368">我的日志</a>
+<a href="http://mail.sxu.cn/blog/index.php?file=listphoto&amp;uid=1368">我的图片</a>
+<a href="http://faculty.sxu.cn/zhangq/">我的软件</a>
+</div><div id="DoEdit">
+<a href="http://mail.sxu.cn/blog/login.php">登录</a> <a href="http://mail.sxu.cn/blog/reg.php">注册</a>
+</div>
+</td>
+            </tr>
+          </tbody>
+        </table>
+        <table id="EditMenuTable" style="display: none;" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tbody>
+            <tr>
+              <td>
+<div id="EditNavigation">
+<a href="javascript:" onclick="ShowEditMenu('ajax.php?inc=ol_editbaseinfo',90,100)">网站设置</a>
+<a href="javascript:" onclick="ShowEditMenu('ajax.php?inc=ol_module',550,100)" style="display: none;">模块</a>
+<a href="javascript:" onclick="ShowEditMenu('ajax.php?inc=ol_style',450,200)">风格</a>
+<a href="javascript:" onclick="ShowEditMenu('ajax.php?inc=ol_layout',295,200)" style="display: none;">布局</a>
+<a href="javascript:" onclick="ShowEditMenu('ajax.php?inc=ol_postnew',80,100)">发表内容</a>
+<a href="javascript:" onclick="ShowEditMenu('ajax.php?inc=ol_sort',100,100)">分类管理</a>
+</div><div id="closeEditNavigation"><a href="#" onclick="ShowDoEdit()">关闭</a></div>
+</td>
+            </tr>
+          </tbody>
+        </table>
+<div style="display: none;">
+<table id="AjaxEditTable" border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tbody><tr>
+    <td class="head"><h3 class="L"></h3><h3 class="R"></h3><span class="eidtmodule" onclick="this.offsetParent.offsetParent.offsetParent.style.display='none'" onmouseover="this.style.cursor='hand'">关闭</span></td>
+  </tr>
+  <tr>
+    <td class="middle"></td>
+  </tr>
+  </tbody></table>
+</div><table id="MainTableWrap" align="center" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="MainTableWrapTd">
+<table id="MainTable" align="center" border="0" cellpadding="0" cellspacing="5" width="100%">
+  <tbody><tr>
+    <td colspan="" id="MainTd_0" width="30%">
+<table class="dragTable" id="intro" border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr> 
+		<td class="head"><h3 class="L"></h3><span class="Tag">个人资料</span><h3 class="R"></h3><span class="eidtmodule">设置</span><span class="deletemodule" onclick="delete_module(this);">禁用</span></td>
+	</tr>
+   <tr>
+                      <td class="middle"><span class="img"><img src="index.php_files/1368_20070926160952_JUQ1JUQ1JUM2JUFDKzA1OA.jpg" onerror="this.src='images/default/noface.jpg'" onload="resizeimageintro(this)" height="150" width="200"></span>
+					  <span class="word">博客访问量:31228 次<br>称呼:zhangq<br>OICQ:***<br>邮箱:***<br>性别:***</span></td>
+                    </tr>
+                     
+	<tr> 
+		<td class="foot"><h3 class="L"></h3><h3 class="R"></h3></td>
+	</tr>
+</tbody></table>
+    
+<table class="dragTable" id="log_sort" border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr> 
+		<td class="head"><h3 class="L"></h3><span class="Tag">日志分类</span><h3 class="R"></h3><span class="eidtmodule">设置</span><span class="deletemodule" onclick="delete_module(this);">禁用</span></td>
+	</tr>
+	<tr> 
+		<td class="middle">
+			<ul>
+
+				<li><a href="http://mail.sxu.cn/blog/index.php?file=listlog&amp;uid=1368&amp;albumid=129">儿童歌曲</a></li>
+
+				<li><a href="http://mail.sxu.cn/blog/index.php?file=listlog&amp;uid=1368&amp;albumid=44">fedora</a></li>
+
+				<li><a href="http://mail.sxu.cn/blog/index.php?file=listlog&amp;uid=1368&amp;albumid=27">编程</a></li>
+
+				<li><a href="http://mail.sxu.cn/blog/index.php?file=listlog&amp;uid=1368&amp;albumid=23">数据库</a></li>
+
+				<li><a href="http://mail.sxu.cn/blog/index.php?file=listlog&amp;uid=1368&amp;albumid=5">宝宝成长日记</a></li>
+
+			</ul>
+		</td>
+	</tr>
+	<tr> 
+		<td class="foot"><h3 class="L"></h3><h3 class="R"></h3></td>
+	</tr>
+</tbody></table>
+</td>
+    <td colspan="" id="MainTd_1" width="70%">
+<table class="dragTable" id="viewlog" border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr> 
+		<td class="head"><h3 class="L"></h3><span class="Tag">浏览日志</span><h3 class="R"></h3><span class="post" onclick="window.location.href='post.php?inc=log&amp;job=postlog';">发表</span></td>
+	</tr>
+  <tr>
+    <td class="middle">
+
+<div class="title">RADIUS协议：认证与计费的鼻祖</div>
+<div class="viewnews" style=""><p class="a14"><b></b>&nbsp;</p>
+<p class="a14"></p>
+<p class="a14">RADIUS（Remote Authentication Dial In User Service）协议最初是由Livingston公司提出的，原先的目的是为拨号用户进行认证和计费。后来经过多次改进，形成了一项通用的认证计费协议。 </p>
+<p class="a14"></p>
+<p class="a14">RADIUS是一种C/S结构的协议，它的客户端最初就是NAS（Net Access
+Server）服务器，现在任何运行RADIUS客户端软件的计算机都可以成为RADIUS的客户端。RADIUS协议认证机制灵活，可以采用PAP、
+CHAP或者Unix登录认证等多种方式。RADIUS是一种可扩展的协议，它进行的全部工作都是基于Attribute-Length-Value的向
+量进行的。 </p>
+<p class="a14"></p>
+<p class="a14">RADIUS的基本工作原理。用户接入NAS，NAS向RADIUS服务器使用Access-Require数据包提交用
+户信息，包括用户名、密码等相关信息，其中用户密码是经过MD5加密的，双方使用共享密钥，这个密钥不经过网络传播；RADIUS服务器对用户名和密码的
+合法性进行检验，必要时可以提出一个Challenge，要求进一步对用户认证，也可以对NAS进行类似的认证；如果合法，给NAS返回Access-
+Accept数据包，允许用户进行下一步工作，否则返回Access-Reject数据包，拒绝用户访问；如果允许访问，NAS向RADIUS服务器提出
+计费请求Account-Require，RADIUS服务器响应Account-Accept，对用户的计费开始，同时用户可以进行自己的相关操作。
+</p>
+<p class="a14"></p>
+<p class="a14">RADIUS还支持代理和漫游功能。简单地说，代理就是一台服务器，可以作为其他RADIUS服务器的代理，负责转发RADIUS认证和计费数据包。所谓漫游功能，就是代理的一个具体实现，这样可以让用户通过本来和其无关的RADIUS服务器进行认证。 </p>
+<p class="a14"></p>
+<p class="a14">RADIUS服务器和NAS服务器通过UDP协议进行通信，RADIUS服务器的1812端口负责认证，1813端口负责计费工作。采用UDP的基本考虑是因为NAS和RADIUS服务器大多在同一个局域网中，使用UDP更加快捷方便。 </p>
+<p class="a14"></p>
+<p class="a14">RADIUS协议还规定了重传机制。如果NAS向某个RADIUS服务器提交请求没有收到返回信息，那么可以要求备份
+RADIUS服务器重传。由于有多个备份RADIUS服务器，因此NAS进行重传的时候，可以采用轮询的方法。如果备份RADIUS服务器的密钥和以前
+RADIUS服务器的密钥不同，则需要重新进行认证。 </p>
+<p class="a14"></p>
+<p class="a14">RADIUS协议应用范围很广，包括普通电话、上网业务计费，对VPN的支持可以使不同的拨入服务器的用户具有不同权限。最近IEEE提出了802.1x标准，这是一种基于端口的标准，用于对无线网络的接入认证，在认证时也采用RADIUS协议。 </p>
+<p class="a14"></p>
+<p class="a14"><b>常见的认证计费机制与系统：任重而道远 </b></p>
+<p class="a14"></p>
+<p class="a14">当前常见的认证机制主要有以下几种： </p>
+<p class="a14"></p>
+<p class="a14">● 基于DCE/Kerberos的认证机制； </p>
+<p class="a14"></p>
+<p class="a14">● 基于公钥的认证机制； </p>
+<p class="a14"></p>
+<p class="a14">● 基于挑战/应答（Challenge/Response）的认证机制。 </p>
+<p class="a14"></p>
+<p class="a14">当前常见的计费系统有以下几种： </p>
+<p class="a14"></p>
+<p class="a14">● IP电话计费：采用RADIUS协议进行计费，对协议本身进行了比较小的改动。由于RADIUS协议本来就是为拨号用户进行认证计费服务的，所以在IP电话业务方面，它基本可以胜任。 </p>
+<p class="a14"></p>
+<p class="a14">● 根据流量进行的网络服务计费：在很多大学中都对校园网用户采用了这样的计费方式。这种计费方式的特点是对计费没有实时性的要求、时间粒度大、计费方式相对单一。 </p>
+<p class="a14"></p>
+<p class="a14">在实际进行流媒体点播收费时会遇到很多问题，对现有的计费协议和解决方案提出了挑战。随着接入网发展的进一步加快，宽带
+IP网将承载丰富的数据、语音、图像等多媒体综合业务，作为流媒体业务支撑平台的用户管理和计费系统，有其自身的新业务特点，如时间、流量、多种计费规
+则、多种媒体格式等，在选择性、高效性、实时性、可靠性及安全性方面将会提出比电信业务的用户管理和计费系统更高的要求。其中最主要的一点是，流媒体支持
+多种媒体格式，并且可以支持多种不同码率，甚至可以在传输的时候根据网络条件来自适应地调整码率，这就给实时流量计费带来了困难，当前的协议不支持实时流
+量信息。 </p>
+<p class="a14"></p>
+<p class="a14">对于流媒体点播系统的用户认证和计费，现有的电信系统的管理经验有借鉴意义，但简单生硬地把电信业务的用户管理和计费系统
+照搬到流媒体系统中是不可取的，只能在吸收电信系统成熟经验的基础上，根据流媒体业务的自身特点，量身定做用户管理和计费系统，才能真正成为流媒体增值业
+务有效的支撑平台，使得流媒体的商业运营成为可能，帮助运营商在激烈的竞争中处于有利地位。 </p>
+<p class="a14"></p>
+<p class="a14">我准备开发一套基于RADIUS协议的用户认证和计费系统，运行在Linux系统上，并可以完成多种用户类型、多种计费策略的认证计费方式。 </p>
+<p class="a14"></p>
+<p class="a14">该计费系统的核心是基于Oracle或MySQL数据库。在数据库里实现对用户的分类和不同计费费率以及计费策略。通信的
+核心是RADIUS协议。认证计费分别在两台服务器上实现，前台服务器主要负责认证工作，与Linux流媒体服务器之间采用RADIUS协议进行通信。前
+台的另一项工作就是作为RADIUS的代理，给后台服务器转发前台传来的计费数据包。由于RADIUS协议对计费和认证的工作没有更多的规定，其核心就是
+对数据适当封装，并进行安全、保密的传送，所以关于RADIUS协议方面的程序通信部分就采用普通的socket编程。 </p>
+<p class="a14"></p>
+<p class="a14">由于要处理多用户并发，所以需要产生多个子进程，对多个用户同时登录的信息进行处理，并且，在函数中要实现一个进程仅处理
+一个请求，如果登录数据包的IP和会话ID是相同的，则RADIUS服务器要比较它们请求Attribute中的向量，如果相同则过滤掉一个，通过这种方
+式来防止重复处理。 </p>
+<p class="a14"></p>
+<p class="a14">前台要完成的另一个任务就是给后台转发计费数据包。这里主要应用了RADIUS的代理协议。前台后台分别放在两台服务器上
+的一个基本考虑是因为后台服务器需要对某些用户进行实时计费，这样就要经常访问数据库，而访问数据库需要大量的系统资源，为了提高系统性能，所以把它们放
+在两台服务器上实现。 </p>
+<p class="a14"></p>
+<p class="a14">后台的计费服务器可以实现不同的计费策略。根据用户的类型，可以分为普通和预付费用户两种，在这些用户中，根据消费情况，还可以分成不同的等级。对于节目来说，可以根据流量或者点播的时间进行计费，还可以根据不同的节目内容进行计费，每个节目都有其相应的费率。 </p>
+<p class="a14"></p>
+<p class="a14"><b>RADIUS协议：要不断改进</b> </p>
+<p class="a14"></p>
+<p class="a14">RADIUS是目前最常用的认证计费协议之一，它简单安全，易于管理，扩展性好，所以得到广泛应用。但是由于协议本身的缺陷，比如基于UDP的传输、简单的丢包机制、没有关于重传的规定和集中式计费服务，都使得它不太适应当前网络的发展，需要进一步改进。 </p>
+<p class="a14"></p>
+<p class="a14">当前IETF成立了专门的工作组讨论关于认证、授权和计费（Authentication, Authorization and Accounting, AAA）的问题，他们认为，一个良好的AAA协议必须具有如下特点： </p>
+<p class="a14"></p>
+<p class="a14">● 协议必须对典型的信息和协同工作的需求进行明确的规定。 </p>
+<p class="a14"></p>
+<p class="a14">● 协议必须定义错误信息类别,并且可以正确地根据错误类别返回。错误信息类别必须覆盖所有的操作错误。 </p>
+<p class="a14"></p>
+<p class="a14">● 计费操作模型必须描述所有的上网方式。 </p>
+<p class="a14"></p>
+<p class="a14">● 协议必须能够在IP v6上正常运行。 </p>
+<p class="a14"></p>
+<p class="a14">● 协议应该能够在传输过程中正确处理拥塞问题。 </p>
+<p class="a14"></p>
+<p class="a14">● 支持代理。 </p>
+<p class="a14"></p>
+<p class="a14">● 与RADIUS兼容。 </p>
+<p class="a14"></p>
+<p class="a14">● 协议应该定义轻量级数据对象,以便于NAS实现。 </p>
+<p class="a14"></p>
+<p class="a14">● 协议应该提供协议本身和数据模型的逻辑区别，并且支持更多的数据类型。 </p>
+<p class="a14"></p>
+<p class="a14">● 必须定义MIB，支持IP v4和IP v6操作。 </p>
+<p class="a14"></p>
+<p class="a14">基于上述考虑，IETF的AAA工作组在2002年3月提出了一个被称为Diameter的认证计费协议草案。
+Diameter协议支持移动IP、NAS请求和移动代理的认证、授权和计费工作，协议的实现和RADIUS类似，也是采用Attribute-
+Length-Value三元组来实现，但是其中详细规定了错误处理等内容。</p></div>
+<div class="word">
+			<li class="title">名称:<a href="#">RADIUS协议：认证与计费的鼻祖</a></li>
+			<li>分类:网络计费</li>
+            <li>人气:2302</li>
+            <li>日期:2007-09-29 14:16:51</li>
+			<li class="operate"><a class="edit" href="http://mail.sxu.cn/blog/post.php?inc=log&amp;job=editlog&amp;id=1">修改</a><a class="del" href="http://mail.sxu.cn/blog/post.php?inc=log&amp;action=deletelog&amp;id=1" onclick="return confirm('你确认要删除吗?不可恢复!')">删除</a><a class="post" href="http://mail.sxu.cn/blog/post.php?inc=log&amp;job=postlog">发表</a></li>
+
+</div>
+
+		</td>
+	</tr>
+	<tr> 
+		<td class="foot"><h3 class="L"></h3><h3 class="R"></h3></td>
+	</tr>
+</tbody></table>
+</td>
+  </tr>
+</tbody></table></td></tr></tbody></table> </td>
+  </tr>
+</tbody></table>
+<table id="footerWrap" align="center" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td>
+<table id="footer" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tbody><tr>
+    <td align="center">
+    	</td>
+  </tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+<script defer="defer">
+if (/Mozilla\/5\.0/.test(navigator.userAgent)){
+document.write('<script type="text/javascript" src="images/js/mozInnerHTML.js"></sc' + 'ript>');
+}
+_navigation();	//导航菜单的自动适应长度
+</script><script type="text/javascript" src="index.php_files/mozInnerHTML.js"></script>
+</body></html>

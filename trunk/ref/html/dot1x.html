@@ -1,0 +1,507 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+
+<!-- #BeginTemplate "/Templates/articles.dwt" --><!-- DW6 --><!-- #BeginEditable "doctitle" -->
+  <title>Examining 802.1x and EAP</title>
+<!-- #EndEditable -->
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <link rel="stylesheet" href="dot1x_files/articles.css" type="text/css">
+  <style type="text/css">
+<!--
+.articleBodyCopy {  font-family: Arial, Helvetica, sans-serif; font-size: 12pt; font-style: normal; line-height: normal; font-weight: normal; font-variant: normal; text-transform: none; color: #000000; text-decoration: none}
+-->
+  </style>
+</head><body style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tbody>
+    <tr>
+      <td align="left" height="168" valign="top">
+      <table style="height: 203px; width: 100%;" border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr bgcolor="#e4e6e7">
+            <td width="2%">&nbsp;</td>
+            <td style="width: 98%;">&nbsp;</td>
+          </tr>
+          <tr bgcolor="#e4e6e7">
+            <td colspan="2"><img src="dot1x_files/HomeLogo.gif" height="76" width="219"> </td>
+          </tr>
+          <tr bgcolor="#e4e6e7">
+            <td width="20"><br>
+            </td>
+            <td style="width: 98%;" class="articlesTitle">
+            <h1><!-- #EndEditable --> </h1>
+            <h1>Examining 802.1x and EAP<br>
+            </h1>
+            </td>
+          </tr>
+          <tr bgcolor="#e4e6e7">
+            <td width="20"> <br>
+            </td>
+            <td width="98%"><br>
+            </td>
+          </tr>
+          <tr bgcolor="#e4e6e7">
+            <td width="20">&nbsp;</td>
+            <td class="articlesAuthor" width="98%"><!-- #BeginEditable "Author" -->Peter
+J. Welcher<br>
+<!-- #EndEditable --> </td>
+          </tr>
+          <tr bgcolor="#ffffff">
+            <td colspan="2" background="dot1x_files/grayline.gif" height="25">&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<table style="width: 100%;" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td style="width: 2%;">&nbsp;</td>
+      <td style="vertical-align: middle; width: 650px;">&nbsp;</td>
+      <td valign="top"><br>
+      </td>
+      <td valign="top"><br>
+      </td>
+      <td valign="top"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="width: 2%; white-space: nowrap;">&nbsp; </td>
+      <td style="text-align: left; vertical-align: middle; width: 650px;" class="articles">
+      <h2>Introduction</h2>
+Security has become a very active interest lately for schools,
+universities, and enterprises. Many have been stunned and even
+overwhelmed with the waves&nbsp; of virus and worm attacks sweeping
+through their networks. Sometimes older network equipment can't handle
+the volume and kind of traffic these nasties send in their attempts to
+spread.&nbsp; Meanwhile, it seems like those lists of vulnerabilities
+in software and device code just keep growing. No, I'm not going to
+solve all that in this month's article!<br>
+      <p>In response to all this, Cisco has been marketing the
+Self-Defending
+Network. Part of that is Network Access Control with Trust
+Agent&nbsp; for checking that personal firewall and virus scanner are
+enabled, etc. This leverages the 802.1x authentication mechanism that
+have been out for while, along with something we'll talk about called
+EAP. The idea is to check not only identity (authentication), but
+compliance with security policies. <br>
+      </p>
+      <p>Meanwhile, security has been a concern on the wireless LAN
+(WLAN) front&nbsp; for a while now. WPA and 802.11i with AES encryption
+look like they've addressed most of the concerns in that arena. But
+these too use 802.1x and the EAP suite for authentication. <br>
+      </p>
+I've been presenting on these sorts of topics lately (WLAN Security and
+802.1x). I see people scrambling to sort all this out. So it seems like
+a good&nbsp; idea to talk through the various things that together
+control access to the network, both wired and wireless. This article
+launches that discussion by
+taking a look at 802.1x and the EAP protocol family, which should be
+quite enough to fill one article. <br>
+      <h2>What Is 802.1x?</h2>
+The standard 802.1x is an IEEE standard for Port-Based Network Access
+Control.&nbsp; The document is readily available on IEEE's web site
+(the URL can be found <a href="#ieeelink">below</a>). It is a modest
+142 pages long. <br>
+      <p>From the introduction to the 802.1x standard document, with
+some omissions: <br>
+      </p>
+      <div style="margin-left: 40px;"><span style="font-family: helvetica,arial,sans-serif;">"Port-based network
+access control makes use of the physical access characteristics of IEEE
+802 LAN infrastructures in order to provide a means of authenticating
+and authorizing devices attached to a LAN port [...], and of preventing
+access to that port in cases in which the authentication and
+authorization process fails. [...] </span><span style="font-family: helvetica,arial,sans-serif;">Examples of ports in
+which the use of authentication can be desirable include the Ports of
+MAC Bridges, [...] , and associations between stations and access
+points in IEEE 802.11 Wireless LANs."</span><br>
+      </div>
+      <p>To say that briefly, 802.1x works at Layer 2 of the OSI model
+to authentication and authorize devices on LAN switches and wireless
+access points, WAP's. It does assume a point-to-point model. This means
+that it is not really intended for situations such as multiple PC's
+connecting to a switch via a hub or simple switch. <br>
+      </p>
+      <h2>Terminology</h2>
+802.1x does introduce some alternative terminology that we need to get
+used to. An <span style="font-weight: bold;">authenticator </span>helps
+authenticate what you connect to it. It does this via the <span style="font-weight: bold;">authentication server</span>. The <span style="font-weight: bold;">supplicant</span> is what is being
+authenticated. See the following diagram if that's unclear.<br>
+      <p><img src="dot1x_files/fig200403a.jpg" title="" alt="figure showing terminology" style="width: 593px; height: 139px;"><br>
+      </p>
+The acronym EAP stands for "Extensible Authentication Protocol".&nbsp; <br>
+      <br>
+802.1x trivia item (for the next&nbsp; time you play): the Port Access
+Entity (PAE) is what executes the algorithms and follows the
+protocol(s). Each of the three items above has a PAE, but the PAE
+software does do different things on each of the three. <br>
+      <h2>How 802.1x Works<br>
+      </h2>
+The 802.1x access control works on unaggregated physical ports&nbsp; at
+OSI Layer 2. It allows or denies access. The access control it exerts
+can govern bidirectional or inbound traffic. <br>
+      <p>On LAN media, 802.1x needs some way to communicate between the
+Supplicant and the Authenticator. This happens directly at Layer 2. The
+protocol used is EAPOL, which stands for EAP encapsulation over
+LANs.&nbsp; EAP is a separate protocol (or family of&nbsp; protocols)
+for authentication. We'll get to EAP in a moment. <br>
+      </p>
+      <p>Sometimes a good way to understand design choices is to think
+about alternatives. To me, Cisco's User Registration Tool (URT) and
+VLAN Policy Server (VPS) are early attempts to figure out the best way
+to do this and solve a real customer need. They take the direct
+approach, whereby the supplicant does DHCP into a default VLAN, uses IP
+to authenticate, and then perhaps gets cut off or moved to another
+VLAN. If the supplicant's switch port shifts to another VLAN, then the
+user or software have to trigger a DHCP release/renew. Doing all this
+is a bit clumsy and slow. It also allows anyone into your network
+temporarily, while waiting for the authentication reply. This is enough
+opportunity that a hacker could use the access for denial of service
+attacks on DHCP or DNS servers, or traffic-based and other attacks on
+the network or network-attached computers. <br>
+      </p>
+      <p>Let's take a look at the EAPOL frame format. It is shown in
+the following figure:<br>
+      </p>
+      <p><img src="dot1x_files/fig200403b.jpg" title="" alt="802.1x frame format" style="width: 650px; height: 99px;"><br>
+      </p>
+      <p>The packet type is as follows:<br>
+      </p>
+      <table style="text-align: left; height: 124px; width: 233px;" border="1" cellpadding="2" cellspacing="2">
+        <tbody>
+          <tr>
+            <td style="vertical-align: top;"><small>0<br>
+            </small></td>
+            <td style="vertical-align: top;"><small>EAP Packet<br>
+            </small></td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;"><small>1<br>
+            </small></td>
+            <td style="vertical-align: top;"><small>EAPOL Start<br>
+            </small></td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;"><small>2<br>
+            </small></td>
+            <td style="vertical-align: top;"><small>EAPOL Logoff<br>
+            </small></td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;"><small>3<br>
+            </small></td>
+            <td style="vertical-align: top;"><small>EAPOL Key<br>
+            </small></td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;"><small>4<br>
+            </small></td>
+            <td style="vertical-align: top;"><small>EAPOL Encapsulated
+ASF Alert<br>
+            </small></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>The Key packet&nbsp; type is used for&nbsp; EAP variants that
+allow an encryption key. The packet body is then a Key Descriptor, with
+specified fields. We'll skip the details.<br>
+      </p>
+      <p>The ASF&nbsp; Alert EAP packet type allows for things like
+SNMP traps to be sent through a port where the authentication resulted
+in an Unauthorized state. </p>
+      <p>The standard notes&nbsp; that use in a shared environment
+is&nbsp; highly insecure unless the supplicant to authenticator traffic
+is a secure association, i.e. encrypted. <br>
+      </p>
+      <p>The following figure shows how the protocol works. It
+basically provides a L2 wrapper to transport EAP information between
+supplicant and authenticator.&nbsp; The authenticator then uses a
+standard protocol, usually RADIUS, to relay information to and from the
+authentication server.<br>
+      </p>
+      <p><img src="dot1x_files/fig200403c.jpg" title="" alt="EAP frame flow diagram" style="width: 598px; height: 360px;"><br>
+      </p>
+      <p><br>
+Note that the EAPOL-Start message is only used if the supplicant
+initiates the exchange. The authenticator can notice link status has
+changed, and just jump right in with the EAP exchange. <br>
+      </p>
+      <p>It may seem a little silly, having a big diagram with only a
+couple of
+arrows in it. I hope that this emphasizes the key point here. That is,
+802.1x and EAPOL just exist as a way to transport EAP information
+between Supplicant and Authenticator. The double arrow goes further
+since we'll see that the authenticator re-encapsulates the EAP
+information, typically within RADIUS, and passes it through to the
+authentication server. </p>
+      <p> </p>
+      <h2>What's EAP?</h2>
+As you've probably guessed by now, EAP is a way for a supplicant to
+authenticate, usually against a back-end RADIUS server. EAP comes from
+the dial access world and PPP.&nbsp; There is an RFC for how RADIUS
+should support EAP between authenticator and authentication server, RFC
+3579. <br>
+      <p>EAP was first defined in the IETF RFC 2284. The EAP TLS
+variant is defined in RFC 2716. For links to these, see the reference
+list below. <br>
+      </p>
+      <p>The following figure shows the EAP format. Note that when
+802.1x is the transport, all this fits into the 802.1x payload field,
+with EAPOL packet type set to 0 (EAP packet). <br>
+      </p>
+      <p><img src="dot1x_files/fig200403d.jpg" title="" alt="EAP format" style="width: 650px; height: 69px;"><br>
+      </p>
+The code field indicates the type of EAP packet as follows:<br>
+      <br>
+      <table style="text-align: left; height: 100px; width: 124px;" border="1" cellpadding="2" cellspacing="2">
+        <tbody>
+          <tr>
+            <td style="vertical-align: top;"><small>1<br>
+            </small></td>
+            <td style="vertical-align: top;"><small>Request<br>
+            </small></td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;"><small>2<br>
+            </small></td>
+            <td style="vertical-align: top;"><small>Response<br>
+            </small></td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;"><small>3<br>
+            </small></td>
+            <td style="vertical-align: top;"><small>Success<br>
+            </small></td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;"><small>4<br>
+            </small></td>
+            <td style="vertical-align: top;"><small>Failure<br>
+            </small></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>The ID is one byte for matching requests and responses. Length
+is the byte count including the code, ID, length and data fields.&nbsp;
+      <br>
+      </p>
+      <p>The data field format varies depending on the code field.
+Types 3 and 4, Success and Failure are easy to describe: they have no
+data field (0 bytes). Types 1 and 2 share a format. It boils down to a
+type code (one byte) then the data for that type.&nbsp; Here's what
+that makes the EAP packet look like:<br>
+      </p>
+      <p><img src="dot1x_files/fig200403e.jpg" title="" alt="EAP Request-Response format" style="width: 650px; height: 69px;"><br>
+      </p>
+      <p> </p>
+      <p>The original RFC defines several types of EAP authentication.
+They are:<br>
+      </p>
+      <table style="text-align: left; height: 148px; width: 304px;" border="1" cellpadding="2" cellspacing="2">
+        <tbody>
+          <tr>
+            <td style="vertical-align: top;"><small>1<br>
+            </small></td>
+            <td style="vertical-align: top;"><small>Identity<br>
+            </small></td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;"><small>2<br>
+            </small></td>
+            <td style="vertical-align: top;"><small>Notification<br>
+            </small></td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;"><small>3<br>
+            </small></td>
+            <td style="vertical-align: top;"><small>Nak (response only)<br>
+            </small></td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;"><small>4<br>
+            </small></td>
+            <td style="vertical-align: top;"><small>MD5-Challenge<br>
+            </small></td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;"><small>5<br>
+            </small></td>
+            <td style="vertical-align: top;"><small>One-Time Password
+(OTP) (RFC 1938)<br>
+            </small></td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;"><small>6<br>
+            </small></td>
+            <td style="vertical-align: top;"><small>Generic Token Card<br>
+            </small></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>RFC 2716 adds type 13, TLS. <br>
+      </p>
+      <p>Searching the IETF drafts for "EAP" leads to too many entries
+to list here. You didn't want that much detail anyway, did you? <br>
+      </p>
+      <h2>How This All Works<br>
+      </h2>
+      <p> </p>
+The RFC's contain some great diagrams showing the sequence of messages
+for the above EAP variants. The IEEE&nbsp; 802.1x standard goes through
+all this for EAP-OTP in a couple of different scenarios (supplicant
+initiated exchange, authenticator initiated, etc.). The following
+figure shows my version of the sequence of messages for EAP-OTP (One
+Time Password). This fills in the big EAP arrow in the above diagram to
+show the full sequence of messages.<br>
+      <p><br>
+      <img src="dot1x_files/fig200403f.jpg" title="" alt="full 802.1x and EAP message exchange for OTP" style="width: 650px; height: 638px;"><br>
+      </p>
+      <br>
+The green dotted arrows in the above figure show the RADIUS messages
+the authenticator relays back and forth.<br>
+      <p>The role of the authenticator is not just as pure relay agent.
+It does observe enough of the EAP authentication exchange to recognize
+the Success or Failure message. On that basis, it can then flag the
+port as authorized (forwarding frames for this supplicant). If it
+receives an EAPOL Logoff, it returns the port state to
+unauthorized.&nbsp; <br>
+      </p>
+      <h2>Summary</h2>
+We've seen that 802.1x is a Layer 2 protocol for transporting
+authentication messages between supplicant (user / PC) and
+authenticator (switch or WAP). It transports EAP messages. There are
+various variants of EAP, which was initially used for PPP
+authentication. We have not gone into what these different EAP
+variations do -- that could be the next article.<br>
+      <p>The following table lists some references you may find useful.
+The IEEE standard is fairly readable. The RFC's are also fairly clearly
+written. <br>
+      </p>
+      <table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+        <tbody>
+          <tr>
+            <td style="vertical-align: top;"><small><a name="ieeelink"></a>IEEE
+802.1x standard document</small></td>
+            <td style="vertical-align: top;"><small><a href="http://grouper.ieee.org/groups/802/1/pages/802.1x.html">http://grouper.ieee.org/groups/802/1/pages/802.1x.html</a></small></td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;"><small>EAP standard, RFC
+2284<br>
+            </small></td>
+            <td style="vertical-align: top;"><small><small><big><a href="http://www.ietf.org/rfc/rfc2284.txt">http://www.ietf.org/rfc/rfc2284.txt</a></big><br>
+            </small></small></td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;"><small>EAP TLS, RFC 2716<br>
+            </small></td>
+            <td style="vertical-align: top;"><a href="http://www.ietf.org/rfc/rfc2716.txt"><small>http://www.ietf.org/rfc/rfc2716.txt</small></a></td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;"><small>One-Time Password,
+RFC 1938</small></td>
+            <td style="vertical-align: top;"><a href="http://www.ietf.org/rfc/rfc1938.txt"><small>http://www.ietf.org/rfc/rfc1938.txt</small></a></td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;"><small>EAP: IETF draft
+search page</small></td>
+            <td style="vertical-align: top;"><small><a href="http://search.ietf.org/">http://search.ietf.org/</a></small></td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;"><small>RADIUS, RFC 2865</small></td>
+            <td style="vertical-align: top;"><a href="http://www.ietf.org/rfc/rfc2865.txt"><small>http://www.ietf.org/rfc/rfc2865.txt</small></a></td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;"><small>RADIUS Accounting,
+RFC 2866</small></td>
+            <td style="vertical-align: top;"><a href="http://www.ietf.org/rfc/rfc2866.txt"><small>http://www.ietf.org/rfc/rfc2866.txt</small></a></td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;"><small>RADIUS Tunneling
+Attributes support, RFC's 2867, 2868<br>
+            </small></td>
+            <td style="vertical-align: top;"><small><a href="http://www.ietf.org/rfc/rfc2867.txt">http://www.ietf.org/rfc/rfc2867.txt</a><br>
+            </small><a href="http://www.ietf.org/rfc/rfc2868.txt"><small>http://www.ietf.org/rfc/rfc2868.txt</small></a><br>
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;"><small>RADIUS Extensions,
+RFC 2869</small></td>
+            <td style="vertical-align: top;"><a href="http://www.ietf.org/rfc/rfc2869.txt"><small>http://www.ietf.org/rfc/rfc2869.txt</small></a></td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;"><small>RADIUS Support for
+EAP, RFC 3579</small></td>
+            <td style="vertical-align: top;"><a href="http://www.ietf.org/rfc/rfc3579.txt"><small>http://www.ietf.org/rfc/rfc3579.txt</small></a></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+I hope you enjoyed our tour through 802.1x and EAP. I'm considering an
+article on wireless LAN authentication and encryption, to try to
+clarify things there. That article might go into more depth on the EAP
+protocols. I also have screen captures from ACS and may write about
+that. It plays the role of authentication server in our above
+discussion. As usual, please email me with your suggestions for
+articles and comments.<br>
+      <h2> </h2>
+      <div class="moz-text-html" lang="x-western">
+      <h2> </h2>
+      <h2> </h2>
+      <h2> </h2>
+      </div>
+      <h2> </h2>
+      <hr size="2">
+      <p>Dr. Peter J. Welcher (CCIE #1773, CCSI #94014, CCIP) is a
+Senior Consultant with Chesapeake NetCraftsmen. NetCraftsmen is a
+high-end consulting firm and Cisco Premier Partner dedicated to quality
+consulting and knowledge transfer. NetCraftsmen has eight CCIE's, with
+expertise including large network high-availability routing/switching
+and design, VoIP, QoS, MPLS, IPSec VPN, wireless LAN and
+bridging,&nbsp; network management, security, IP multicast, and other
+areas. See <a href="http://www.netcraftsmen.net/">
+http://www.netcraftsmen.net</a> for more information about
+NetCraftsmen. Pete's links start at <a href="http://www.netcraftsmen.net/welcher">
+http://www.netcraftsmen.net/welcher</a> . New articles will be posted
+under the Articles link. Questions, suggestions for articles, etc. can
+be sent to <span style="font-weight: bold; text-decoration: underline;">pjw
+&lt;at&gt; netcraftsmen &lt;dot&gt; net</span>.<br>
+      </p>
+      <p><span style="font-family: 'Times New Roman';"><o:p></o:p></span></p>
+      <p> <span style="font-family: &quot;Times New Roman&quot;;"><o:p></o:p></span></p>
+4/6/2004<br>
+      <br>
+Copyright (C)&nbsp; 2004&nbsp; Peter J. Welcher<br>
+<!-- #EndEditable --></td>
+      <td valign="top"><br>
+      </td>
+      <td valign="top"><br>
+      </td>
+      <td valign="top"><br>
+      </td>
+    </tr>
+    <tr>
+      <td width="2%">&nbsp;</td>
+      <td style="vertical-align: middle; text-align: left; width: 650px;">&nbsp;</td>
+      <td valign="top"><br>
+      </td>
+      <td valign="top"><br>
+      </td>
+      <td valign="top"><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- #EndTemplate -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="dot1x_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-4597266-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+</body></html>

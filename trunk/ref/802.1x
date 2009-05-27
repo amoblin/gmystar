@@ -1,0 +1,100 @@
+版权声明：原创作品，允许转载，转载时请务必以超链接形式标明文章 原始出处 、作者信息和本声明。否则将追究法律责任。http://jimqu.blog.51cto.com/105370/105805
+
+作为一个认证协议，802.1X在实现的过程中有很多重要的工作机制。下图显示了802.1X协议的基本原理：
+Supplicant发出一个连接请求（EPAoL），该请求被Authenticator（支持802.1X协议的交换机）转发到Authentication Server（支持EAP验证的RADIUS服务器）上，Authentication Server得到认证请求后会对照用户数据库，验证通过后返回相应的网络参数，如客户终端的IP地址，MTU大小等。Authenticator得到这些信息后，会打开原本被堵塞的端口。客户机在得到这些参数后才能正常使用网络，否则端口就始终处于阻塞状态，只允许802.1X的认证报文EAPoL通过。 
+3.5.GIF (3.42 KB)
+2008-8-25 21:06
+
+
+802.1X认证协议原理
+1.1.1
+基本认证流程
+图3-6是一个典型的认证会话流程，采用的认证机制是MD5-Challenge：
+(1)
+Supplicant发送一个EAPoL-Start报文发起认证过程。
+(2)
+Authenticator收到EAPoL-Start后，发送一个EAP-Request报文响应Supplicant的认证请求，请求用户ID。
+(3)
+Supplicant以一个EAP-Response报文响应EAP-Request，将用户ID封装在EAP报文中发给Authenticator。
+(4)
+Authenticator将Supplicant送来的EAP-Request报文与自己的NAS IP、NAS Port等相关信息一起封装在RADIUS Access-Request报文中发给认证服务器（Authentication Server）。
+
+ 
+3.6.GIF (10.85 KB)
+2008-8-25 21:06
+
+典型的认证会话流程
+(5)
+认证服务器收到RADIUS Access-Request报文后，将用户ID提取出来在数据库中进行查找。如果找不到该用户ID，则直接丢弃该报文；如果该用户ID存在，认证服务器会提取出用户的密码等信息，用一个随机生成的加密字进行MD5加密，生成密文。同时，将这个随机加密字封装在一个EAP-Challenge Request报文中，再将该EAP报文封装在RADIUS Access-Challenge报文的EAP-Message属性中发给Authenticator。
+(6)
+Authenticator收到RADIUS Access-Challenge报文后，将封装在该报文中的EAP-Challenge Request报文发送给Supplicant。
+(7)
+Supplicant用认证服务器发来的随机加密字对用户名密码等信息进行相同的MD5加密运算生成密文，将密文封装在一个EAP-Challenge Response报文中发给Authenticator。
+(8)
+Authenticator收到EAP-Challenge Response报文后，将其封装在一个RADIUS Access-Request报文的EAP-Message属性中发给认证服务器。
+(9)
+认证服务器拆开封装，将Supplicant发回的密文与自己在第（5）步中生成的密文进行对比。如果不一致，则认证失败，服务器将返回一条RADIUS Access-Reject信息，同时保持端口关闭状态；如果一致，则认证通过，服务器将一条EAP-Success消息封装在RADIUS Access-Accept报文的属性中发送给Authenticator。
+(10)
+Authenticator在接到认证服务器发来的RADIUS Access-Accept之后，将端口状态更改为“已授权”，同时将RADIUS Access-Accept中的EAP-Success报文拆出来发送给Supplicant。
+(11)
+Authenticator向认证服务器发送一个RADIUS Accounting-Request（Start）报文，申请开始计账。
+(12)
+认证服务器开始记账，向Authenticator返回RADIUS Accounting-Response报文。
+(13)
+用户下线时，Supplicant向Authenticator发送EAPOL-Logoff报文。
+(14)
+Authenticator向认证服务器发送RADIUS Accounting-Request（Stop）请求。
+(15)
+认证服务器收到Authenticator送来的停止记账请求后停止记账，同时发送一条RADIUS Accounting-Response响应。
+(16)
+Authenticator发送一条EAPoL Failure消息给Supplicant，同时将端口状态置为“未授权”。
+1.1.2
+认证发起
+802.1X的认证可以由Supplicant主动发起，也可以由Authenticator发起。在认证发起阶段，Supplicant和Authenticator之间互相不知道发送的目标，因此其目标MAC地址为802.1X协议中分配的组播地址：01-80-C2-00-00-03。
+1.1.2.1
+由Authenticator发起的认证
+当Authenticator探测到某个端口的状态由“down”切换到“up”时，或者检测到有未经认证的用户使用网络时，就会发起认证。在认证开始之前，端口的状态被强制为未经认证状态。
+如果Supplicant的身份标识不可知，则Authenticator会发送EAP-Request/Identity报文，请求Supplicant发送身份标识。这样，就开始了典型的认证过程。
+Supplicant在收到来自Authenticator的EAP-Request报文后，将发送EAP-Response报文响应Authenticator的请求。
+Authenticator支持定期的重新认证，可以随时对一个端口发起重新认证的过程。如果端口状态为已认证状态，则当Authenticator发起重新认证时，若通过认证，则该端口的状态保持不变；如果未通过认证，则该端口的状态改变为未认证状态。
+1.1.2.2
+由Supplicant发起认证
+如果用户要上网，则可以通过Supplicant软件向Authenticator发送EAPOL-Start报文，来主动发起认证。Authenticator在收到Supplicant发送的EAPOL-Start报文后，会发送EAP-Request/Identity报文响应用户请求，要求用户发送身份标识，这样就启动了一个认证过程。
+如果连续发送多次都没有收到来自Authenticator的EAP-Request，Supplicant就认为认证通过，因为Authenticator可能并不支持802.1X。
+1.1.3
+退出已认证状态
+有几种方式可以造成Authenticator把端口状态从已认证状态改变成未认证状态：
+¨
+Supplicant未通过认证服务器的认证；
+¨
+由于管理性的控制端口始终处于未认证状态，而不管是否通过认证；
+¨
+与端口对应的MAC地址出现故障（管理性禁止或硬件故障）；
+¨
+Supplicant与Authenticator之间的连接失败，造成认证超时；
+¨
+重新认证超时；
+¨
+Supplicant未响应Authenticator发起的认证请求；
+¨
+Supplicant发送EAPOL-Logoff报文，主动下线。
+退出己认证状态的直接结果就是导致用户下线。如果用户要继续上网，则要再发起一个认证过程。
+当一个用户从一台终端退出后，很可能其他用户不发起一个新的登录请求就可以利用该设备访问网络。提供专门的退出机制来确保中止用户与Authenticator专有的会话进程，可以防止用户的访问权限被他人盗用。通过发送EAPOL-Logoff报文，可以使Authenticator将对应的端口状态改变为未认证状态。
+1.1.4
+重新认证
+为了保证Supplicant和Authenticator之间的链路处于激活状态，以防因为用户端设备发生故障造成异常死机后影响对用户记账的准确性，Authenticator可以定期发起重新认证过程。
+重新认证过程对于用户是透明的，即用户无需再次输入用户名/密码。该过程由Authenticator发起，时间是从最近一次成功认证后算起。
+1.1.5
+认证报文丢失重传
+对于Authenticator和Supplicant之间通信的EAP报文，如果发生丢失，则由Authenticator负责进行报文重传。在设定重传时间的时候，考虑网络的实际环境，通常会认为Authenticator和Supplicant之间报文丢失的几率较低且传送延迟低，因此一般通过一个超时计数器来设定，默认重传时间为30秒。
+有些报文的丢失重传比较特殊，如EAPOL-Start报文的丢失是由Supplicant负责重传的；而对于EAP-Failure和EAP-Success报文的丢失，Supplicant会在一个超时时间后自动重新连接。
+由于对用户身份合法性的认证最终由认证服务器执行，Authenticator和认证服务器之间的报文丢失重传也很重要。
+另外要注意的是，在执行802.1X认证时，只有认证通过后才能进行DHCP发起和IP分配的过程。如果Supplicant配置了DHCP自动获取，则可能在未启动802.1X Supplicant之前，就发起了DHCP的请求。而此时Authenticator处于禁止通行状态，这样Authenticator会丢掉初始化的DHCP帧，同时会发起对用户的认证。由于DHCP请求超时过程为64秒，因此，如果802.1X认证过程能在这64秒内完成，那么DHCP请求将不会超时，Supplicant可顺利完成地址请求。如果终端软件支持认证后再执行一次DHCP，则不用考虑64秒的超时限制了。
+1.1.6
+EAP帧的中继转发
+由于Authenticator与Supplicant之间是采用EAPOL协议进行通信，而Authenticator与认证服务器之间则采用EAP协议进行通信，可以看出Authenticator充当了把Supplicant的EAPOL协议帧转换成EAP协议帧的中继功能。
+EAPOL-Start和EAPOL-Logoff帧只能由Supplicant发送给Authenticator，而Authenticator把EAPOL-Key帧发送给Supplicant。Authenticator不能将这些帧中继给认证服务器。EAP-Request/Identity帧只能由Authenticator发送给Supplicant，而不会发送给认证服务器。
+除了以上的这些特殊帧外，Supplicant和Authenticator之间通信的其他帧都可以转发给认证服务器。不过帧格式要从EAPOL格式转换成EAP格式。反向的，Authenticator会把所有从认证服务器收到的EAP格式的帧转换成EAPOL格式发送给Supplicant。
+1.1.7
+加密EAPOL认证报文的传送
+EAPOL协议支持在Supplicant和Authenticator之间加密传送认证报文。可以通过协议参数KeyTransmissionEnabled来控制是否加密。如果该值为TRUE，表示对认证报文进行加密；如果值为FALSE，则表示不对认证报文加密。如果Supplicant或Authenticator不支持加密，则KeyTransmissionEnabled参数应设置为FALSE。

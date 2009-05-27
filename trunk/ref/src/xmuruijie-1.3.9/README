@@ -1,0 +1,37 @@
+This file is encoded in UTF-8
+作者：
+	余钰炜 <yu-yuwei@xmu.edu.cn> 厦门大学 化学工程与生物工程系 2006硕研
+
+用途：
+	完成Linux下校园网的锐捷认证，算法是锐捷2.56。
+
+
+安装：
+	* 如果您是Gentoo用户，请使用gentoo-china overlay的ebuild直接安装
+	1. 用 sh install.sh install 安装
+	2. 用 sh install.sh uninstall 卸载
+
+使用：
+	1. 动态IP认证：先用xmuruijie.py加上参数-D认证，
+       然后用系统中的DHCP客户端获取IP；
+	2. 静态IP认证：以静态IP方式启动网络界面（需要先设置好IP，子网掩码，
+    网关，DNS），后用xmuruijie.py加上-S认证；
+	3. 默认用锐捷2.56的算法动态认证，如果需要用xrgsu-1.1.1的算法认证，请用-x参数。
+
+
+认证：
+	1. 必须以root运行；
+	2. 在/etc/xmuruijie.conf中设置好用户名，密码，网络界面等；
+	3. 前台运行： xmuruijie.py -S/-D
+	4. 前台停止： Ctrl+C
+	5. 后台运行： xmuruijie.py -d -S/-D
+	6. 后台停止： xmuruijie.py -p	
+	7. 使用xrgsu 1.1.1算法：另加 -x，
+		如前台时：xmuruijie.py -x
+	8. 安装完后，会有/etc/init.d/xmuruijie，用上面的方法确认能认证成功后，
+	可以用 /etc/init.d/xmuruijie start来启动，用stop代替start就是关闭。
+
+注意：
+	请先用前台方式运行，确认认证通过后，关闭，再换用后台方式运行。
+	如果你在使用中设置了正确的用户名和密码认证出错，请查看一下日志。如果是提示用户名或密码错误，请尝试用命令行参数 -m 运行，因为有些学校的md5回应算法略有不同。
+

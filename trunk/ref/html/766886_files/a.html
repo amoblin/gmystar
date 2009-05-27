@@ -1,0 +1,49 @@
+if(typeof(A4page) == 'undefined') A4page = {}; A4page.Zone = [];
+A4page.Zone["H1"]={"zonecode":"H1",content:[{ "aid":"20695", "zid":"634",	"title":"悟透JavaScript",	"link":"http://book.cnblogs.com/zt/wtjs/",	"advtype":"T",	"source":"",	"adFormCode":"H1",  "protected":false }]};A4page.Zone["S1"]={"zonecode":"S1",content:[{ "aid":"23606", "zid":"437",	"title":"china-pub",	"link":"http://www.china-pub.com/STATIC07/0902/zh_spfv09_090202.asp",	"advtype":"P",	"source":"http://a4.yeshj.com/upload/200902/YU-D-S1P-23606_27.gif",	"adFormCode":"S1",  "protected":false }]};A4page.Zone["S2"]={"zonecode":"S2",content:[{ "aid":"17655", "zid":"443",	"title":"沪江网店品牌广告",	"link":"http://www.hjbook.net/cate/10/",	"advtype":"P",	"source":"http://a4.yeshj.com/upload/200810/YU-D-S2P-17655_59.jpg",	"adFormCode":"S2",  "protected":false }]};A4page.Zone["S4"]={"zonecode":"S4",content:[{ "aid":"24503", "zid":"685",	"title":"E8.Net工作流",	"link":"http://www.feifanit.com.cn/",	"advtype":"P",	"source":"http://a4.yeshj.com/upload/200903/YU-D-S4P-24503_54.gif",	"adFormCode":"S4",  "protected":false }]};A4page.Zone["Z1"]={"zonecode":"Z1",content:[{ "aid":"24651", "zid":"746",	"title":"<font color=red><b>沪江网技术部招聘新成员啦！</b></font>",	"link":"http://job.cnblogs.com/zt/2009YesHJ/",	"advtype":"T",	"source":"",	"adFormCode":"Z1",  "protected":false },{ "aid":"24650", "zid":"746",	"title":"<font color=red>新媒传信正在招聘</font>",	"link":"http://job.cnblogs.com/enterprise/267/",	"advtype":"T",	"source":"",	"adFormCode":"Z1",  "protected":false },{ "aid":"24649", "zid":"746",	"title":"<font color=red><b>SQL Server 2005晚间培训课程(上海)</b></font>",	"link":"http://event.cnblogs.com/sql2005_training/",	"advtype":"T",	"source":"",	"adFormCode":"Z1",  "protected":false }]};
+
+function show_a4_zone(zonecode)
+{
+		if(A4page.Zone[zonecode].content[0].advtype == "T"){
+
+			for (var i=0, post; post = A4page.Zone[zonecode].content[i]; i++) {
+
+				if(zonecode.substring(0,1) == "H")
+					document.write("<a href=\"http://a4.yeshj.com/rd/"+ post.aid +"/\" target=\"_blank\">" + post.title +"</a>&nbsp;&nbsp;");
+				else
+					document.write("<a href=\"http://a4.yeshj.com/rd/"+ post.aid +"/\" target=\"_blank\">" + post.title +"</a><br/>");
+			}			
+
+		}	else if (A4page.Zone[zonecode].content[0].advtype == "P"){
+
+			if( A4page.Zone[zonecode].content.length == 1 ){
+
+				document.write("<a href=\"http://a4.yeshj.com/rd/"+ A4page.Zone[zonecode].content[0].aid +"/\" target=\"_blank\"><img src=\""+ A4page.Zone[zonecode].content[0].source +"\" border=\"0\"></a>");
+
+			}else{
+
+				for (var i=0, post; post = A4page.Zone[zonecode].content[i]; i++) {
+						document.write("<a href=\"http://a4.yeshj.com/rd/"+ post.aid +"/\" target=\"_blank\"><img src=\""+ post.source +"\" border=\"0\"></a><br/><br/>");
+				}						
+			}
+
+		}else if (A4page.Zone[zonecode].content[0].advtype == "F"){
+
+			document.write(ConvertUbb(A4page.Zone[zonecode].content[0].source));
+
+		}
+}
+
+function ConvertUbb(Source){
+	//定义ubb转换参数
+	var flash_ubb = /\[flash=(\d*),(\d*)\](\S*)\[\/flash\]/igm;
+	var flash_html= "<OBJECT codeBase=\"http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,22,0\" "
+	+ " classid=\"clsid:d27CDB6E-AE6D-11cf-96B8-444553540000\" "
+	+ "width=$1 height=$2>"
+	+ "<PARAM NAME=movie VALUE=\"$3\">"
+	+ "<PARAM NAME=quality VALUE=high>"
+	+ "<embed src=\"$3\" width=$1 height=$2 quality=high name=index type=\"application/x-shockwave-flash\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\"/>"
+	+ "</OBJECT>";
+	//执行转换
+	Source=Source.replace(flash_ubb, flash_html );
+	return Source;
+}
