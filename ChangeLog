@@ -11,6 +11,8 @@
 			http://www.cppblog.com/len/archive/2008/03/27/45548.html
 	gtkmm:http://zh.wikipedia.org/wiki/Gtkmm
 	libnotify:http://apt-blog.co.cc/archives/386.html
+	dbus :http://www.cppblog.com/iuranus/archive/2009/05/13/69894.html
+		http://www.ibm.com/developerworks/cn/linux/l-dbus.html
 
 2009年05月24日 星期日 15时40分12秒
 	修改论文，明确结构;
