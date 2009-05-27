@@ -1,3 +1,27 @@
+2009年05月26日 星期二 22时48分56秒
+	完成uml图。
+
+	以下是参考链接：
+	make : http://www.chinalinuxpub.com/doc/pro/gmake.html
+	libnet : http://blog.chinaunix.net/u2/82249/showart_1741727.html
+	libpcap: http://www.diybl.com/course/3_program/c++/cppjs/2008324/106112.html
+	tinyxml: http://www.wangchao.net.cn/bbsdetail_895762.html
+			http://www.cnblogs.com/peterzb/articles/1456364.html
+	glade 3 : http://www.gnome-cn.org:19580/gnomecn/Filescenter/documents/tutorial/glade-advance-tutorial
+			http://www.cppblog.com/len/archive/2008/03/27/45548.html
+	gtkmm:http://zh.wikipedia.org/wiki/Gtkmm
+	libnotify:http://apt-blog.co.cc/archives/386.html
+
+2009年05月24日 星期日 15时40分12秒
+	修改论文，明确结构;
+	增加src中各文件的说明注释，便于程序源代码的打印。
+	去掉back_window.sh的后缀
+	增加makeall脚本，将源文件统一于一个文件，以生成程序源代码清单
+	修改pdf文件夹为doc_pdf，增加doc2pdf脚本
+	增加dia的TODO
+	确定翻译文章：lordan or eap white paper?
+2009年05月13日 星期三 19时12分55秒
+	完成论文封面。
 2009年04月22日 星期三 01时22分53秒
 	整理文档，有几个问题：
 	1。MAC帧，802.1x协议，EAP协议，RADIUS协议，它们之间什么关系？
@@ -22,8 +46,7 @@
 2009年04月20日 星期一 00时57分08秒
 	研读了sendpacket文件，搞定！下一步是blog和md5文件的研究。还有dbus的实现...
 2009年04月10日 星期五 08时08分25秒
-	dropbox的Public不能下载了，这下没地方发布了，想来想去只有google
-	code了。于是在google code上创建项目，重新用上了svn.
+	dropbox的Public不能下载了，这下没地方发布了，想来想去只有google code了。于是在google code上创建项目，重新用上了svn.
 2009年04月09日 星期四 14时16分28秒
 	用recordmydesktop录制了使用效果演示，默认是ogv格式的，又用mencoder转为avi格式的。
 	提交更新错误，难道因为好久没提交了，删错文件了？索性将版本控制由svn改为git了，虽然对svn还没有完全了解，而且对git更不了解。。。

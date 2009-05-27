@@ -1,3 +1,15 @@
+/*************************************************
+ *  gMystar.h
+ *
+ *  Copyright (C) 2009  csip(amoblin@gmail.com)
+ *
+ *  ChangeLog:
+ *
+ *  Description:
+ *	Warning: this file should be in UTF-8.
+ *  
+ **************************************************/
+
 #include "Mystar.h"
 #include <gtkmm.h>
 #include <libglademm.h>
@@ -27,7 +39,7 @@ class gMystar:public Window
         static void *change_ui(void *);
 
         Glib::RefPtr<Gnome::Glade::Xml> refXml;
-        static Window *MainWindow;
+        //static Window *MainWindow;
         Entry *username_entry;
         Entry *password_entry;
         Entry *fakeAddress_entry;

@@ -1,3 +1,14 @@
+/**************************************************
+ *  User.h
+ *
+ *  Copyright (C) 2009  csip(amoblin@gmail.com)
+ *
+ *  ChangeLog:
+ *
+ *  Description:
+ *	Warning: this file should be in UTF-8.
+ *  
+ **************************************************/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

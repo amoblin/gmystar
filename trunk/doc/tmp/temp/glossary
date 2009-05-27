@@ -1,0 +1,6 @@
+IP授权模式
+	锐捷网络实现的802.1x，可以强制要求已认证的用户使用固定的IP。管理员通过配置IP授权模式来限定用户获得IP地址的方式。IP授权模式有三 种：DISABLE模式、DHCP SERVER模式、RADIUS SERVER模式。下面分别介绍这三种工作模式的特性：
+	DISABLE模式（默认）：在该模式下，交换机不对用户的IP做限制，用户只需认证通过便可以使用网络。
+	DHCP SERVER模式：用户的IP通过指定的DHCP SERVER获得，只有指定的DHCP SERVER分配的IP才是合法的IP。
+	RADIUS SERVER模式：用户的IP通过RADIUS SERVER指定。用户只能用RADIUS SERVER指定的IP访问网络。
+

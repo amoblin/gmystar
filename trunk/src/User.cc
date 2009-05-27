@@ -1,3 +1,14 @@
+/****************************************************
+ *  User.cc
+ *
+ *  Copyright (C) 2009  csip(amoblin@gmail.com)
+ *
+ *  ChangeLog:
+ *
+ *  Description:
+ *	Warning: this file should be in UTF-8.
+ *  
+ *****************************************************/
 #include "User.h"
 User::User(char *username, char *password, char *nickname, char *fakeAddress)
 {
