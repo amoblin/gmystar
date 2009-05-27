@@ -1,0 +1,525 @@
+/*********************************************************************
+******超级链接样式表
+*********************************************************************/
+a {
+	font-size: 12px;
+}
+a:link {
+	color: #333333;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #333333;
+}
+a:hover {
+	text-decoration: underline;
+	color: #990000;
+}
+a:active {
+	text-decoration: none;
+}
+
+/*********************************************************************
+******默认属性
+*********************************************************************/
+body, form, ul, li, p, dl, dd, dt ,h,td,th{
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+}
+li,ul{
+	list-style: none;
+}
+TD {
+	VERTICAL-ALIGN: top
+}
+/*网页整体*/
+body {
+	background:#BCB658 url(bg.jpg) repeat-y center;
+	margin: 0px;
+}
+/*网页最外层表格*/
+#BodyTable{
+	background:#FFF;
+	width:100%;
+	margin:0px;
+	border:0px solid #fff;
+	background:url(topbg.jpg) no-repeat center top;
+}
+
+
+
+/*********************************************************************
+******网站头部
+*********************************************************************/
+/*最顶部表格*/
+#header {
+	width:950px;
+	HEIGHT: 324px;
+	
+}
+#header td{
+	padding-top:8em;
+	padding-left:4em;
+}
+/*网站名称也即可更换LOGO*/
+#webname a{
+	display:block;
+	float:left;
+	margin:3em 0em 3em 0.5em;
+	font-size:20px;
+	font-weight:bold;
+	color:#18365C;
+	background:url();
+	text-indent:0em;
+}
+/*我的BLOG地址*/
+#weburl{
+	float:right;
+	margin:17em 2em 0em 0;
+	color:#fff;
+}
+/*网站口号标语*/
+#slogan{
+	float:right;
+	margin:4em 0.5em 0em 0em;
+	font-weight:bold;
+	color:#757575;
+	font-size:14px;
+}
+/*********************************************************************
+******网站头部导航菜单
+*********************************************************************/
+/*网站导航菜单外表格*/
+#MenuTable{
+	width:950px;
+	background:#EBEBEB;
+	border-left:0px solid #FFF;
+	border-right:0px solid #FFF;
+	height:44px;
+	background:url(menutable.jpg) no-repeat left top;
+}
+#MenuTable td{
+	padding:9px 3px 0px 5px;
+	background:url(menutd.jpg) no-repeat right top;
+}
+/*网站导航菜单*/
+#navigation a{
+	display:;
+	margin-top:0px;
+	width:60px;
+	float:left;
+	text-indent:0em;
+	background:url() no-repeat ;
+	background-position: 0 40%;
+	text-decoration: underline;
+	color:#FFF;
+}
+#navigation{
+	float:left;
+	padding:7px;
+	margin-left:24px;
+}
+#DoEdit{
+	padding:7px;
+	float:right;
+	margin-right:0px;
+}
+#DoEdit a{
+	color:#FFF;
+}
+/*********************************************************************
+******网站头部编辑菜单
+*********************************************************************/
+#EditMenuTable{
+	height:23px;
+	WIDTH:950PX;
+	border-bottom:1px solid #ccc;
+}
+#EditMenuTable td{
+	padding-top:4px;
+	padding-left:3em;
+}
+/*在线编辑DIV容器*/
+.Editdiv{
+	border:1px #396050 solid;
+	background:#D3DED7;
+	color:#000;
+}
+/*风格*/
+#ol_style ul li{
+	display:block;
+	float:left;
+	width:70px;
+	height:70px;
+	margin:3px 0 0 3px;
+}
+#ol_style ul li img{
+	width:60px;
+	height:60px;
+	border:1px solid #396050;
+}
+/*布局*/
+#ol_layout ul li{
+	display:block;
+	float:left;
+	width:90px;
+	height:60px;
+	margin:3px 0 0 3px;
+}
+#ol_layout ul li img{
+	width:80px;
+	height:50px;
+	border:1px solid #396050;
+}
+/*模块*/
+#ol_module ul li{
+	display:block;
+	float:left;
+	width:90px;
+	height:20px;
+	margin:3px 0 0 3px;
+}
+/*发表内容*/
+#PostNew{
+	margin:5px;
+	line-height:18px;
+}
+/*网站基本设置*/
+#EditBaseInfo{
+	margin:5px;
+	line-height:18px;
+}
+/*********************************************************************
+******网站主页内容
+*********************************************************************/
+/*内容表格*/
+#MainTable {
+	width:900px;
+	BORDER-COLLAPSE: collapse;
+	background:url(biz_11.gif) repeat-y right;
+}
+#MainTable td{
+	padding:4px;
+}
+/*移动表格*/
+#MainTable .dragTable { 
+	MARGIN-BOTTOM: 0px; 
+	WIDTH: 100%; 				
+	border: 0px solid #6880A2;
+	background:#FFF url(tp_21.jpg) repeat-y left;
+}
+#MainTable .dragTable .middle{ 
+	background: url(tp_20.jpg) repeat-y right;
+}
+/*拖拉模块时,浮动的层*/
+.DragDiv{
+	background:#ccc;
+	border:5px solid red;
+	cursor:move;
+	text-align:center;
+	font-size:20px;
+	padding-top:2em;
+	font-weight:bold;
+}
+/*********************************************************************
+******可移动表格的头部
+*********************************************************************/
+/*可移动表格的头部*/
+#MainTable .head {
+	height: 48px;
+	overflow: hidden;
+	background: #fff url(tp_05.jpg) repeat-x;
+	background-position: top;
+	border:0px solid #fff;
+	padding-left:0px;
+	padding-RIGHT:0px;
+	padding-bottom:0px;
+	color:#FFF;
+
+}
+#MainTable .head .L{
+	display:block;
+	height: 45px;
+	float:left;
+	width:4px;
+	background: #FFF url(tp_15.jpg) no-repeat left bottom;
+}
+#MainTable .head .R{
+	display:block;
+	height: 45px;
+	float:right;
+	width:5px;
+	background: #FFF url(tp_16.jpg) no-repeat right bottom;
+}
+#MainTable .foot{
+	padding-left:0;
+	padding-bottom:0;
+	padding:0;
+}
+#MainTable .foot{
+	background: #FFF url(tp_18.jpg) no-repeat center ;
+}
+#MainTable .foot .L{
+	display:block;
+	height: 30px;
+	float:left;
+	width:31px;
+	background: #FFF url(tp_17.jpg) no-repeat left top;
+}
+#MainTable .foot .R{
+	display:block;
+	height: 30px;
+	float:right;
+	width:32px;
+	background: #FFF url(tp_19.jpg) no-repeat right top;
+}
+/*可移动表格的头部功能按钮*/
+#MainTable .head span{
+	DISPLAY: block; 
+	FLOAT: left
+}
+#MainTable .head .Tag{
+	FONT-WEIGHT: bold;
+	margin-top:24px;
+	margin-LEFT:5px;
+	cursor: text;
+}
+#MainTable .head .deletemodule,#MainTable .head .eidtmodule,#MainTable .head .post{
+	width:25px;
+	padding-top:22px;
+	margin-right:2px;
+	FLOAT: right;
+	cursor: hand;
+	margin-top:2px;
+}
+/*********************************************************************
+******可移动表格里的主体内容
+*********************************************************************/
+/*可移动表格里的主体内容*/
+#MainTable .middle{
+	padding:3px 1em 3px 1em;
+}
+#MainTable .middle li{
+	margin:3px 1em 3px 1em;
+	overflow: hidden;
+	list-style-type:circle;
+}
+
+/*********************************************************************
+******可移动表格里的图片列表的样式表
+*********************************************************************/
+/**
+*图片列表的样式表
+**/
+#MainTable .page{
+	text-align:center;
+	margin:1em 0 1em 0;
+}
+#MainTable ul.imglist{
+	display:block;
+	float:left;
+	width:130px;
+
+	overflow: hidden;
+}
+#MainTable ul.imglist li{
+	list-style:none;
+}
+#MainTable ul.imglist li.word span{
+	display:block;
+	width:130px;
+	height:14px;
+	overflow: hidden;
+}
+#MainTable ul.imglist li.word span.title a{
+	font-weight:bold;
+}
+#MainTable ul.imglist li.img img{
+	border:0xp;
+	width:120px;
+	height:90px;
+	border:2px solid #FFF;
+}
+#MainTable ul.imglist li.img a{
+	display:block;
+	width:120px;
+	height:90px;
+	border:1px solid #999;
+}
+/*********************************************************************
+******日志列表页
+*********************************************************************/
+#MainTable ul.listnews{
+	display:block;
+	width:100%;
+	height:23px;
+	padding:5px;
+	border-bottom:1px dashed #94ABC7;
+}
+#MainTable ul.listnews li{
+	display:block;
+	margin:0px;
+	float:right;
+	background: ;
+}
+#MainTable ul.listnews li.title{
+	float:left;
+	text-indent: 1em;
+	background:  url(title_icon2.gif) no-repeat;
+	background-position: 0em 40%;
+}
+#MainTable ul.listnews li.del a{
+	display:block;
+	width:25px;
+	margin-left:0.5em;
+	text-indent: -2em;
+	background: url(ico_del.gif) no-repeat;
+	background-position: 0em 0%;
+}
+#MainTable ul.listnews li.edit a{
+	display:block;
+	width:25px;
+	margin-left:0.5em;
+	text-indent: -2em;
+	background: url(ico_edit.gif) no-repeat;
+	background-position: 0em 0%;
+}
+/*********************************************************************
+******图片列表页
+*********************************************************************/
+#MainTable ul.listphoto{
+	display:block;
+	width:100%;
+	padding:5px;
+	border-bottom:1px dashed #94ABC7;
+}
+#MainTable ul.listphoto li{
+	display:block;
+	float:left;
+}
+#MainTable ul.listphoto li.img a{
+	display:block;
+	border:1px solid #999;
+}
+#MainTable ul.listphoto li.img img{
+	border:2px solid #FFF;
+}
+#MainTable ul.listphoto li.word{
+	margin-left:1em;
+	padding-left:0.5em;
+	border-left:1px dotted #ccc;
+	
+} 
+#MainTable ul.listphoto li.word span{
+	display:block;
+	margin-top:4px;
+}
+#MainTable ul.listphoto li.word span.title a{
+	font-weight:bold;
+}
+/*********************************************************************
+******内容最终页
+*********************************************************************/
+#MainTable div.title{
+	border-bottom:1px dotted #ccc;
+	margin:1em;
+	height:21px;
+	font-weight:bold;
+	text-indent: 2em;
+	background:url(ico_widget.gif) no-repeat;
+	background-position: 0em 0%;
+}
+#MainTable div.photo{
+	margin:1em 2em 1em 2em;
+	overflow: hidden;
+}
+#MainTable div.viewnews{
+	margin:1em 2em 1em 2em;
+	overflow: hidden;
+	font-size:14px;
+	line-height:25px;
+}
+#MainTable div.viewnews p{
+	font-size:14px;
+	line-height:25px;
+}
+#MainTable div.word{
+	border-top:1px solid #ccc;
+	border-bottom:1px dotted #ccc;
+	padding-top:1em;
+	margin:1em;
+}
+#MainTable div.word li{
+	margin-top:5px;
+}
+#MainTable div.word li.title a{
+	font-weight:bold;
+}
+#MainTable div.word .del{
+	margin-left:1em;
+}
+#MainTable div.word .post{
+	margin-left:1em;
+}
+/*********************************************************************
+******商品最终页
+*********************************************************************/
+
+#MainTable .middle .content .img{
+	width:160px;
+	border-right:dotted 1px #ccc;
+}
+#MainTable .middle .content .word span{
+	display:block;
+	margin:5px 0 3px 8px;
+}
+#MainTable .middle .content .word span dd{
+	display:block;
+	float:left;
+	padding-right:7px;
+}
+#MainTable .middle .about{
+	display:block;
+	margin-top:1em;
+	padding-top:1em;
+	border-top:solid 1px #ccc;
+}
+#MainTable .middle .about .intro{
+	font-size:14px;
+	font-weight:bold;
+	color:#990000;
+}
+/*********************************************************************
+******网页底部
+*********************************************************************/
+#footer{
+	margin:0;
+	height:131px;
+	background:url(biz_14.gif) ;
+	width:930px;
+}
+#footer td{
+	background:url(biz_15.gif) no-repeat top right;
+	padding-top:4em;
+}
+#footerWrap{
+	background:url(footer.jpg) no-repeat center ;
+}
+/*********************************************************************
+******这是在线编辑弹出框的样式表
+*********************************************************************/
+.dragEdits{
+	position:absolute;
+	width:725px;
+	height:430px;
+	background:transparent;
+	overflow:hidden;
+	top:180px;
+	z-index:9999;
+}
+#jobedit{
+	width:100%;
+	height:100%;
+}

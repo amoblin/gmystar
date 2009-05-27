@@ -1,0 +1,191 @@
+.cn1 {
+	COLOR: #000000; FONT-FAMILY: "宋体"; FONT-SIZE: 9pt; LINE-HEIGHT: 18px
+}
+.cn2 {
+	COLOR: #333333; FONT-FAMILY: "宋体"; FONT-SIZE: 14px; LINE-HEIGHT: 28px
+}
+INPUT {
+	FONT-FAMILY: 宋体; FONT-SIZE: 9pt
+}
+BUTTON {
+	FONT-FAMILY: 宋体; FONT-SIZE: 9pt
+}
+SELECT {
+	FONT-FAMILY: 宋体; FONT-SIZE: 9pt
+}
+.h20 {
+	COLOR: #000000; FONT-FAMILY: "宋体"; FONT-SIZE: 21px
+}
+.news {
+	FONT-FAMILY: "宋体"; FONT-SIZE: 14px; LINE-HEIGHT: 130%
+}
+BODY {
+	FONT-SIZE: 9pt
+}
+TH {
+	FONT-SIZE: 9pt
+}
+TD {
+	FONT-SIZE: 9pt
+}
+.fontshadow {
+	COLOR: #ffffff; CURSOR: hand; FILTER: Shadow(Color=#000000, Direction=45); FONT-FAMILY: "宋体"; FONT-SIZE: 9pt; WIDTH: auto
+}
+A:link {
+	COLOR: #000000; FONT-FAMILY: "宋体"; TEXT-DECORATION: underline
+}
+A:visited {
+	COLOR: #003399; FONT-FAMILY: "宋体"; TEXT-DECORATION: underline
+}
+A:active {
+	COLOR: #003399; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #cc0000; TEXT-DECORATION: none
+}
+A.1:link {
+	COLOR: #000000; FONT-FAMILY: 宋体; TEXT-DECORATION: underline
+}
+A.1:visited {
+	COLOR: #660000; FONT-FAMILY: 宋体; TEXT-DECORATION: underline
+}
+A.1:active {
+	COLOR: #660000; FONT-FAMILY: 宋体; TEXT-DECORATION: underline
+}
+A.1:hover {
+	COLOR: #ff0000; TEXT-DECORATION: none
+}
+A.2:link {
+	COLOR: #993300; FONT-FAMILY: 宋体; TEXT-DECORATION: underline
+}
+A.2:visited {
+	COLOR: #993300; FONT-FAMILY: 宋体; TEXT-DECORATION: underline
+}
+A.2:active {
+	COLOR: #ff66ff; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.2:hover {
+	COLOR: #000000; TEXT-DECORATION: underline
+}
+A.3:link {
+	COLOR: #ccff00; FONT-FAMILY: 宋体; TEXT-DECORATION: underline
+}
+A.3:visited {
+	COLOR: #ccff00; FONT-FAMILY: 宋体; TEXT-DECORATION: underline
+}
+A.3:active {
+	COLOR: #ccff00; FONT-FAMILY: 宋体; TEXT-DECORATION: underline
+}
+A.3:hover {
+	COLOR: #ffffff; TEXT-DECORATION: underline
+}
+A.4:link {
+	COLOR: #000000; FONT-FAMILY: 宋体; TEXT-DECORATION: underline
+}
+A.4:visited {
+	COLOR: #000000; FONT-FAMILY: 宋体; TEXT-DECORATION: underline
+}
+A.4:active {
+	COLOR: #000000; FONT-FAMILY: 宋体; TEXT-DECORATION: underline
+}
+A.4:hover {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A.5:link {
+	COLOR: #ffffff; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.5:visited {
+	COLOR: #ffffff; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.5:active {
+	COLOR: #ffffff; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.5:hover {
+	COLOR: #eeeeee; TEXT-DECORATION: none
+}
+A.6:link {
+	COLOR: #cc0000; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.6:visited {
+	COLOR: #cc0000; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.6:active {
+	COLOR: #cc0000; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.6:hover {
+	COLOR: #000000; TEXT-DECORATION: underline
+}
+A.7:link {
+	COLOR: #7d0549; FONT-FAMILY: 宋体; TEXT-DECORATION: underline
+}
+A.7:visited {
+	COLOR: #7d0549; FONT-FAMILY: 宋体; TEXT-DECORATION: underline
+}
+A.7:active {
+	COLOR: #7d0549; FONT-FAMILY: 宋体; TEXT-DECORATION: underline
+}
+A.7:hover {
+	COLOR: #ff0000; TEXT-DECORATION: none
+}
+A.8:link {
+	COLOR: #333333; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.8:visited {
+	COLOR: #333333; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.8:active {
+	COLOR: #333333; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.8:hover {
+	COLOR: #ff0000; TEXT-DECORATION: none
+}
+.cnbt {
+	COLOR: #000000; FONT-FAMILY: "宋体"; FONT-SIZE: 9pt; FONT-WEIGHT: bold; LETTER-SPACING: 0.2em
+}
+.en1 {
+	COLOR: #000000; FONT-FAMILY: "MS Sans Serif"; FONT-SIZE: 9pt
+}
+.cn3 {
+	COLOR: #666666; FONT-FAMILY: "宋体"; FONT-SIZE: 9pt; LINE-HEIGHT: 17px
+}
+.cn4 {
+	COLOR: #003399; FONT-FAMILY: "宋体"; FONT-SIZE: 14px; FONT-WEIGHT: normal
+}
+.cn5 {
+	COLOR: #cc0000; FONT-FAMILY: "宋体"; FONT-SIZE: 9pt
+}
+.cn6 {
+	COLOR: #333333; FONT-FAMILY: "宋体"; FONT-SIZE: 9pt; LINE-HEIGHT: 18px
+}
+.s01 {
+	BACKGROUND-COLOR: #ffffff; BORDER-BOTTOM: 1px inset; BORDER-LEFT: 1px inset; BORDER-RIGHT: 1px inset; BORDER-TOP: 1px inset; VERTICAL-ALIGN: text-bottom
+}
+.s02 {
+	BACKGROUND-COLOR: #cccccc; BORDER-BOTTOM: 1px ridge; BORDER-LEFT: #ffffff 1px ridge; BORDER-RIGHT: 1px ridge; BORDER-TOP: #ffffff 1px ridge; CURSOR: hand
+}
+.cnbt1 {
+	COLOR: #ffffff; CURSOR: hand; FONT-FAMILY: "宋体"; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.cn7 {
+	COLOR: #ffffff; FONT-FAMILY: "宋体"; FONT-SIZE: 9pt; LINE-HEIGHT: 17px
+}
+.cnbt2 {
+	COLOR: #cc0000; FONT-FAMILY: "宋体"; FONT-SIZE: 9pt; FONT-WEIGHT: bold
+}
+.cn8 {
+	COLOR: #cc0000; FONT-FAMILY: "宋体"; FONT-SIZE: 14px
+}
+.14e {
+	CURSOR: hand; FONT-SIZE: 14px
+}
+.news14 {
+	COLOR: #333333; FONT-SIZE: 14px; LINE-HEIGHT: 23px
+}
+.cn9 {
+	COLOR: #666666; FONT-FAMILY: "宋体"; FONT-SIZE: 9pt; FONT-STYLE: normal; LINE-HEIGHT: 24px; TEXT-TRANSFORM: capitalize
+}
+.h{TEXT-DECORATION: none;color:#ffffff;font-family: 仿宋,宋体}
+.h:link{TEXT-DECORATION:none;color:#ffffff}
+.h:hover {TEXT-DECORATION:none;COLOR:#ffffff}
+.h:visited{TEXT-DECORATION:none;color:#ffffff}
+.h:actived{TEXT-DECORATION:none;color:#ffffff}

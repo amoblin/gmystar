@@ -1,0 +1,668 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>KStarBase</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>KStarBase</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>492</width>
+            <height>441</height>
+        </rect>
+    </property>
+    <property name="sizePolicy">
+        <sizepolicy>
+            <hsizetype>5</hsizetype>
+            <vsizetype>5</vsizetype>
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+        </sizepolicy>
+    </property>
+    <property name="minimumSize">
+        <size>
+            <width>492</width>
+            <height>221</height>
+        </size>
+    </property>
+    <property name="maximumSize">
+        <size>
+            <width>492</width>
+            <height>441</height>
+        </size>
+    </property>
+    <property name="caption">
+        <string>KStar for Linux</string>
+    </property>
+    <widget class="QGroupBox">
+        <property name="name">
+            <cstring>basicGroupBox</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>10</y>
+                <width>471</width>
+                <height>170</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>基本信息</string>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>passwordTextLabel</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>40</x>
+                    <y>70</y>
+                    <width>40</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>密码:</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>nicTextLabel</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>30</x>
+                    <y>110</y>
+                    <width>40</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>网络卡:</string>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>connectButton</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>340</x>
+                    <y>30</y>
+                    <width>111</width>
+                    <height>30</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>连接认证</string>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>disconnectButton</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>340</x>
+                    <y>70</y>
+                    <width>111</width>
+                    <height>30</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>断开连接</string>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>exitButton</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>340</x>
+                    <y>110</y>
+                    <width>111</width>
+                    <height>30</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>退出系统</string>
+            </property>
+        </widget>
+        <widget class="QCheckBox">
+            <property name="name">
+                <cstring>simpleCheckBox</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>200</x>
+                    <y>140</y>
+                    <width>81</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>精简模式</string>
+            </property>
+            <property name="checked">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>userNameTextLabel</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>30</x>
+                    <y>30</y>
+                    <width>50</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>用户名:</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>usernameLineEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>90</x>
+                    <y>30</y>
+                    <width>220</width>
+                    <height>24</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>passwordLineEdit</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>90</x>
+                    <y>70</y>
+                    <width>220</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="echoMode">
+                <enum>Password</enum>
+            </property>
+        </widget>
+        <widget class="QCheckBox">
+            <property name="name">
+                <cstring>rememberCheckBox</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>100</x>
+                    <y>140</y>
+                    <width>81</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>记住密码</string>
+            </property>
+            <property name="checked">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QComboBox">
+            <property name="name">
+                <cstring>nicComboBox</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>90</x>
+                    <y>110</y>
+                    <width>220</width>
+                    <height>24</height>
+                </rect>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>statusTextLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>190</y>
+                <width>330</width>
+                <height>22</height>
+            </rect>
+        </property>
+        <property name="font">
+            <font>
+                <family>文鼎PL中楷Uni</family>
+                <pointsize>14</pointsize>
+            </font>
+        </property>
+        <property name="text">
+            <string>未连接</string>
+        </property>
+    </widget>
+    <widget class="QTabWidget">
+        <property name="name">
+            <cstring>advanceTabWidget</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>230</y>
+                <width>471</width>
+                <height>200</height>
+            </rect>
+        </property>
+        <widget class="QWidget">
+            <property name="name">
+                <cstring>outputTab</cstring>
+            </property>
+            <attribute name="title">
+                <string>输出</string>
+            </attribute>
+            <widget class="QTextEdit">
+                <property name="name">
+                    <cstring>outputTextEdit</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>8</x>
+                        <y>13</y>
+                        <width>450</width>
+                        <height>140</height>
+                    </rect>
+                </property>
+                <property name="readOnly">
+                    <bool>true</bool>
+                </property>
+            </widget>
+        </widget>
+        <widget class="QWidget">
+            <property name="name">
+                <cstring>optionTab</cstring>
+            </property>
+            <attribute name="title">
+                <string>运行选项</string>
+            </attribute>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>echo2TextLabel</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>390</x>
+                        <y>20</y>
+                        <width>50</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>设0禁用</string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>echoTextLabel</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>220</x>
+                        <y>20</y>
+                        <width>80</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>Echo周期(s):</string>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>fakeAddressTextLabel</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>230</x>
+                        <y>110</y>
+                        <width>30</width>
+                        <height>30</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>伪IP:</string>
+                </property>
+            </widget>
+            <widget class="QCheckBox">
+                <property name="name">
+                    <cstring>autoStartCheckBox</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>20</x>
+                        <y>20</y>
+                        <width>83</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>开机自动运行</string>
+                </property>
+            </widget>
+            <widget class="QCheckBox">
+                <property name="name">
+                    <cstring>autoConnectCheckBox</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>20</x>
+                        <y>50</y>
+                        <width>83</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>运行自动连接</string>
+                </property>
+            </widget>
+            <widget class="QCheckBox">
+                <property name="name">
+                    <cstring>autoMinimizeCheckBox</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>20</x>
+                        <y>80</y>
+                        <width>150</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>连接成功自动最小化</string>
+                </property>
+            </widget>
+            <widget class="QCheckBox">
+                <property name="name">
+                    <cstring>intelligentCheckBox</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>20</x>
+                        <y>110</y>
+                        <width>120</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>智能重连</string>
+                </property>
+            </widget>
+            <widget class="QCheckBox">
+                <property name="name">
+                    <cstring>fakeAddressCheckBox</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>370</x>
+                        <y>90</y>
+                        <width>70</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>启用伪IP</string>
+                </property>
+            </widget>
+            <widget class="QSpinBox">
+                <property name="name">
+                    <cstring>echoIntervalSpinBox</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>320</x>
+                        <y>20</y>
+                        <width>50</width>
+                        <height>22</height>
+                    </rect>
+                </property>
+                <property name="maxValue">
+                    <number>60</number>
+                </property>
+            </widget>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>authModeTextLabel</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>220</x>
+                        <y>56</y>
+                        <width>80</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>认证模式:</string>
+                </property>
+            </widget>
+            <widget class="QLineEdit">
+                <property name="name">
+                    <cstring>fakeAddressLineEdit</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>289</x>
+                        <y>113</y>
+                        <width>150</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+            </widget>
+            <widget class="QComboBox">
+                <item>
+                    <property name="text">
+                        <string>标准模式</string>
+                    </property>
+                </item>
+                <item>
+                    <property name="text">
+                        <string>实达模式</string>
+                    </property>
+                </item>
+                <property name="name">
+                    <cstring>authModeComboBox</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>310</x>
+                        <y>60</y>
+                        <width>130</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+            </widget>
+        </widget>
+        <widget class="QWidget">
+            <property name="name">
+                <cstring>aboutTab</cstring>
+            </property>
+            <attribute name="title">
+                <string>帮助</string>
+            </attribute>
+            <widget class="QPushButton">
+                <property name="name">
+                    <cstring>aboutButton</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>360</x>
+                        <y>140</y>
+                        <width>91</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>关于</string>
+                </property>
+            </widget>
+            <widget class="QTextEdit">
+                <property name="name">
+                    <cstring>helpTextEdit</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>8</x>
+                        <y>13</y>
+                        <width>451</width>
+                        <height>121</height>
+                    </rect>
+                </property>
+                <property name="readOnly">
+                    <bool>true</bool>
+                </property>
+            </widget>
+        </widget>
+    </widget>
+</widget>
+<connections>
+    <connection>
+        <sender>aboutButton</sender>
+        <signal>clicked()</signal>
+        <receiver>KStarBase</receiver>
+        <slot>aboutButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>authModeComboBox</sender>
+        <signal>activated(int)</signal>
+        <receiver>KStarBase</receiver>
+        <slot>authModeComboBox_activated(int)</slot>
+    </connection>
+    <connection>
+        <sender>autoConnectCheckBox</sender>
+        <signal>stateChanged(int)</signal>
+        <receiver>KStarBase</receiver>
+        <slot>autoConnectCheckBox_stateChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>autoMinimizeCheckBox</sender>
+        <signal>stateChanged(int)</signal>
+        <receiver>KStarBase</receiver>
+        <slot>autoMinimizeCheckBox_stateChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>autoStartCheckBox</sender>
+        <signal>stateChanged(int)</signal>
+        <receiver>KStarBase</receiver>
+        <slot>autoStartCheckBox_stateChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>connectButton</sender>
+        <signal>clicked()</signal>
+        <receiver>KStarBase</receiver>
+        <slot>connectButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>disconnectButton</sender>
+        <signal>clicked()</signal>
+        <receiver>KStarBase</receiver>
+        <slot>disconnectButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>echoIntervalSpinBox</sender>
+        <signal>valueChanged(const QString&amp;)</signal>
+        <receiver>KStarBase</receiver>
+        <slot>echoIntervalSpinBox_valueChanged(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>exitButton</sender>
+        <signal>clicked()</signal>
+        <receiver>KStarBase</receiver>
+        <slot>exitButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>fakeAddressCheckBox</sender>
+        <signal>stateChanged(int)</signal>
+        <receiver>KStarBase</receiver>
+        <slot>fakeAddressCheckBox_stateChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>fakeAddressLineEdit</sender>
+        <signal>lostFocus()</signal>
+        <receiver>KStarBase</receiver>
+        <slot>fakeAddressLineEdit_lostFocus()</slot>
+    </connection>
+    <connection>
+        <sender>fakeAddressLineEdit</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>KStarBase</receiver>
+        <slot>fakeAddressLineEdit_textChanged(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>intelligentCheckBox</sender>
+        <signal>stateChanged(int)</signal>
+        <receiver>KStarBase</receiver>
+        <slot>intelligentCheckBox_stateChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>nicComboBox</sender>
+        <signal>activated(int)</signal>
+        <receiver>KStarBase</receiver>
+        <slot>nicComboBox_activated(int)</slot>
+    </connection>
+    <connection>
+        <sender>passwordLineEdit</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>KStarBase</receiver>
+        <slot>passwordLineEdit_textChanged(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>rememberCheckBox</sender>
+        <signal>stateChanged(int)</signal>
+        <receiver>KStarBase</receiver>
+        <slot>rememberCheckBox_stateChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>simpleCheckBox</sender>
+        <signal>stateChanged(int)</signal>
+        <receiver>KStarBase</receiver>
+        <slot>simpleCheckBox_stateChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>usernameLineEdit</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>KStarBase</receiver>
+        <slot>usernameLineEdit_textChanged(const QString&amp;)</slot>
+    </connection>
+</connections>
+<slots>
+    <slot>connectButton_clicked()</slot>
+    <slot>disconnectButton_clicked()</slot>
+    <slot>exitButton_clicked()</slot>
+    <slot>aboutButton_clicked()</slot>
+    <slot>simpleCheckBox_stateChanged(int)</slot>
+    <slot>fakeAddressCheckBox_stateChanged(int)</slot>
+    <slot>fakeAddressLineEdit_lostFocus()</slot>
+    <slot>autoStartCheckBox_stateChanged(int)</slot>
+    <slot>autoConnectCheckBox_stateChanged(int)</slot>
+    <slot>autoMinimizeCheckBox_stateChanged(int)</slot>
+    <slot>intelligentCheckBox_stateChanged(int)</slot>
+    <slot>echoIntervalSpinBox_valueChanged(const QString&amp;)</slot>
+    <slot>rememberCheckBox_stateChanged(int)</slot>
+    <slot>usernameLineEdit_textChanged(const QString&amp;)</slot>
+    <slot>passwordLineEdit_textChanged(const QString&amp;)</slot>
+    <slot>nicComboBox_textChanged(const QString&amp;)</slot>
+    <slot>authModeComboBox_textChanged(const QString&amp;)</slot>
+    <slot>fakeAddressLineEdit_textChanged(const QString&amp;)</slot>
+    <slot>nicComboBox_activated(int)</slot>
+    <slot>authModeComboBox_activated(int)</slot>
+    <slot>advanceTabWidget_selected(const QString&amp;)</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

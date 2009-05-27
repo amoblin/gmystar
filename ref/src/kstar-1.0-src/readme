@@ -1,0 +1,29 @@
+         Copyright (C) 2008 by duanp   
+            duanp@163.com   
+
+本软件认证机制源于www.byhh.net提供的mystar，感谢NetXRay
+和Windows Mento作者
+
+使用说明: KStar需要libcap和libnet和libqt软件库的支持，基
+于Qt3编写使用前清确认这些库文件已经安装。
+
+编译过程：
+
+qmake src.pro > Makefile
+make 
+
+然后就有可执行文件
+
+你可以到我的blog来查找此软件的更新，(也许不会有更新)
+http://duanp.cnblogs.com  QQ:524250234
+
+KStar 是自由软件；您可以按照自由软件基金会所发表的 GNU GPL
+ 协议自由发放和/或修改它；GPL 协议应该采用第二版或以后的任何
+版本。
+
+KStar 发表的目的是希望它能够对您有用，但我们没有任何保证；
+对于以任何用途使用它所造成的任何直接或间接后果都不承担任何责
+任。请参看 GNU GPL 协议中的细节。
+您应该在收到 KStar 的同时收到了 GNU GPL协议的副本；如果您
+没有收到的话，请给自由软件基金会写信，地址是 51 Franklin 
+Street, Fifth Floor, Boston, MA  02110-1301  USA

@@ -1,0 +1,472 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+	
+
+
+<meta http-equiv="expires" content="Tue, 20 Aug 1996 01:00:00 GMT">	
+<meta http-equiv="Pragma" content="no-cache">
+
+	<title>Security / Introducing 802.1x and EAP - Tech Update - ZDNet</title>
+<!-- DD5: 09/10/2003 13:34:54 -->
+
+		
+
+<meta name="description" content="Security--especially network security--is a top priority for IT professionals. ZDNet presents the key resources, updated daily, for enterprise security.">
+<meta name="keywords" content="authentication, security, firewall, encryption, IPsec, WLAN, wireless, password, challenge, intrusion, hacker, virus, antivirus, gateway, enforcement, DMZ, dirty, perimeter, defense, biometric, monitoring, filtering, restrict">
+		</head><body leftmargin="10" topmargin="10" alink="#333399" bgcolor="#232850" link="#003399" vlink="#666699">[an error occurred while processing this directive]
+<link rel="stylesheet" type="text/css" href="0,14179,2878940-2,00_files/92.css">
+<link rel="stylesheet" type="text/css" href="0,14179,2878940-2,00_files/zd2.css">
+
+
+[an error occurred while processing this directive]<div align="center">
+
+
+
+
+<!-- do not remove comment tags -->
+
+<!-- **cobrand:header** -->
+
+<!-- header -->
+
+
+<table style="background-image: url(http://i.i.com.com/cnwk.1d/i/zd/fd/zdnet_hd1.gif); background-repeat: no-repeat;" border="0" cellpadding="0" cellspacing="0" height="59" width="750">
+<tbody><tr>
+<td align="right" width="750">
+
+	<table border="0" cellpadding="0" cellspacing="0" width="750">
+	<tbody><tr>
+	<td class="m1" align="right" valign="top">
+	<img src="0,14179,2878940-2,00_files/b.gif" alt="" align="texttop" height="45" width="1">
+	<iframe bgcolor="#232850" style="background: rgb(35, 40, 80) none repeat scroll 0% 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;" marginheight="0" marginwidth="0" target="_top" src="0,14179,2878940-2,00_files/headerinclude.html" frameborder="0" height="25" scrolling="no" width="310"></iframe>
+	</td>
+	</tr>
+	</tbody></table>
+	</td></tr></tbody></table>
+
+[an error occurred while processing this directive]
+
+<!-- /header -->
+
+<!-- top border -->
+<table border="0" cellpadding="0" cellspacing="0" width="750">
+<tbody><tr>
+<td bgcolor="#83a3cb" width="1"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="7" width="1"><br></td>
+
+
+
+<td class="m1" align="center" bgcolor="#1e5c99" height="20" width="748">[an error occurred while processing this directive]</td>
+	
+<td bgcolor="#83a3cb" width="1"><img src="0,14179,2878940-2,00_files/b.gif" height="7" width="1"><br></td>
+</tr>
+</tbody></table>
+<table border="0" cellpadding="0" cellspacing="0" width="750">
+<tbody><tr>
+<td bgcolor="#83a3cb" width="1"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="1" width="1"><br></td>
+<td bgcolor="#1e5c99" height="1" width="9"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="1" width="9"><br></td>
+<td bgcolor="#ffffff" height="1" width="730"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="1" width="730"><br></td>
+<td bgcolor="#1e5c99" height="1" width="9"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="1" width="9"><br></td>
+<td bgcolor="#83a3cb" width="1"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="1" width="1"><br></td>
+</tr>
+</tbody></table>
+<!-- /top border -->
+
+
+<!-- horizontal ad table -->
+<table border="0" cellpadding="0" cellspacing="0" width="750">
+<tbody><tr valign="top">
+<td bgcolor="#83a3cb" width="1"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="1" width="1"><br></td>
+<td bgcolor="#1e5c99" width="9"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="1" width="9"><br></td>
+<td bgcolor="#ffffff" width="1"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="1" width="1"><br></td>
+<td align="center" bgcolor="#ffffff" width="728">
+
+<img src="0,14179,2878940-2,00_files/b.gif" height="8" width="1"><br>
+
+<!--AD_CACHE-->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- no banner rotator -->[an error occurred while processing this directive]
+	<img src="0,14179,2878940-2,00_files/b.gif" height="4" width="1"><br>
+</td>
+<td bgcolor="#ffffff" width="1"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="1" width="1"><br></td>
+<td bgcolor="#1e5c99" width="9"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="1" width="9"><br></td>
+<td bgcolor="#83a3cb" width="1"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="1" width="1"><br></td>
+</tr>
+</tbody></table>
+<!-- /horizontal ad table -->
+<!-- right column layout -- GUTTERS SHOULD BE REMOVEABLE -->
+<table border="0" cellpadding="0" cellspacing="0" width="750">
+<tbody><tr valign="top">
+<td bgcolor="#83a3cb" width="1"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="1" width="1"><br></td>
+<td bgcolor="#1e5c99" width="9"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="1" width="9"><br></td>
+<td bgcolor="#ffffff" width="1"><img src="0,14179,2878940-2,00_files/b.gif" height="1" width="1"><br></td>
+
+
+<td bgcolor="#ffffff" width="10"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="1" width="10"><br></td>
+<td bgcolor="#ffffff" width="548"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="10" width="1"><br>
+	
+	<table border="0" cellpadding="0" cellspacing="0" width="548">
+<tbody><tr><td colspan="2"><img src="0,14179,2878940-2,00_files/faded.gif" border="0" height="8" width="548"></td></tr>
+<tr><td class="a4" align="left"><b class="dr2">Tech Update</b>&nbsp;<b>Security</b></td></tr>
+<tr><td colspan="2"><img src="0,14179,2878940-2,00_files/faded.gif" border="0" height="8" width="548"></td></tr>
+</tbody></table>
+
+
+   <table valign="top" border="0" cellpadding="0" cellspacing="0" width="548">
+<tbody><tr>
+<td class="m2" valign="top" width="548">
+
+	 
+		
+			<span class="g3"><b class="m2">At last, real wireless LAN security</b></span><br>
+			<b class="a5">Introducing 802.1x and EAP</b><br>
+		    
+		
+		<span class="m2">
+			
+			By <b class="g3">George Ou</b>
+			 </span>
+		  <br>
+	<span class="m2"><span class="g3">
+	        
+		TechRepublic<br>
+	 September 3, 2002  </span></span>
+	<br><img src="0,14179,2878940-2,00_files/b.gif" border="0" height="5" width="1"><br>
+   
+		<table border="0" cellpadding="0" cellspacing="0" height="23"><tbody><tr><td valign="top" width="85"><a href="#talkback" onmouseover="talkback.src='http://i.i.com.com/cnwk.1d/i/zdnn/po/2003/03/sp_talk_ro.gif'" onmouseout="talkback.src='http://i.i.com.com/cnwk.1d/i/zdnn/po/2003/03/sp_talk_reg.gif'"><img src="0,14179,2878940-2,00_files/sp_talk_reg.gif" alt="TalkBack!" name="talkback" border="0" height="23" width="85"></a></td><td class="m2" valign="middle">&nbsp;<a class="zd" href="#talkback"><span class="m2">Add your opinion</span></a></td></tr></tbody></table>
+	<img src="0,14179,2878940-2,00_files/b.gif" border="0" height="5" width="1"><br>
+	 [an error occurred while processing this directive]   </td></tr></tbody></table>
+	<br>
+	
+	
+	
+	
+	
+	 <span class="m2">After
+the IEEE recognized the shortcomings of WEP and 802.11, it quickly came
+up with the 802.1x and EAP solution. A standard for Port Based Access
+Control for both wired and wireless networking, 802.1x in itself does
+not make wireless networking secure. However, combine 802.1x with the
+Extensible Authentication Protocol (EAP) standard, and the gold
+standard in wireless network security is born; it's now possible to
+resolve WEP's biggest liability: static user and session keys.
+<p>User authentication is now mutually assured, and WEP keys can be
+centrally managed with policies and distributed securely. WEP keys can
+now be unique for individual users and individual sessions. In
+addition, keys can be set to automatically expire every 10 minutes to
+force constant rekeying, which makes it impossible to collect the 100
+to 1,000 MB of data that hackers need to break WEP. The illustration
+below shows how this combination works.</p><p>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td valign="top">
+
+ </td></tr><tr><td align="left" width="64"><img src="0,14179,2878940-2,00_files/illo_wlansecurity.jpg" border="0" height="263" width="452"></td></tr>
+ 
+<tr><td colspan="3" height="10"><img src="0,14179,2878940-2,00_files/b_002.gif" height="10" width="1"></td></tr>
+</tbody></table>
+The client makes a connection to the access point. At this point, the
+client is in an unauthorized state and not given an IP address or
+permitted access to the network in any way. The only thing the client
+can do is send 802.1x messages. The client sends user credentials to
+the access point with EAP, and the access point forwards the request to
+the Remote Authentication Dial-In User Service (RADIUS) server for
+approval. If the credentials are valid, the client will request
+credentials from the Authenticator via 802.1x and EAP. Once that
+process is complete, the RADIUS server issues a new temporary WEP key,
+and the access point allows the WEP session to proceed for that client.
+Every 10 minutes, the key expires and the EAP authentication process is
+run again to buy another 10 minutes of time.
+</p><p>
+<b>Security is worth the investment</b><br>For any business network
+where wireless encryption needs to hold beyond one day, the time for
+real wireless LAN security has arrived. It may cost a few times more
+than a consumer access point and require a more complex implementation,
+but your company's security should be worth a lot more than a $100 SOHO
+wireless access point. Your $100,000 firewall is useless if someone
+puts up a rogue access point, and standard WEP can do little to stop
+such attacks.
+</p><p><b>How are you protecting your wireless LAN? <a href="http://techupdate.zdnet.com/techupdate/stories/main/0,14179,2878940-2,00.html#talkback">TalkBack</a> below or <a target="_blank" href="https://mail.google.com/mail?view=cm&amp;tf=0&amp;to=techupdates@cnet.com">e-mail us</a> with your thoughts.</b></p></span>
+	
+	
+		<br>
+		<span class="m1">TechRepublic provides insight, advice, and technical information written by IT professionals for IT professionals.<br>
+		<a class="zd1" href="http://zdnet.com.com/redir?ontId=2878940&amp;lop=tr_story&amp;siteId=2&amp;destUrl=http%3A%2F%2Fwww.techrepublic.com%2Fpromotion.jhtml%3Fpc%3DZDTU50%0D%0A">Have the top IT experts by your side today--FREE!</a></span><br><img src="0,14179,2878940-2,00_files/b.gif" border="0" height="5" width="1"><br>
+	  
+	
+	   <table border="0" cellpadding="0" cellspacing="0" width="548">
+	<tbody><tr><td colspan="2"><img src="0,14179,2878940-2,00_files/dots548.gif" alt="" border="0" height="5" width="548"></td></tr>
+	<tr><td colspan="2"><img src="0,14179,2878940-2,00_files/b.gif" alt="" border="0" height="10" width="548"></td></tr>
+	<tr>
+	
+	   <td align="right" height="15" width="548">
+	   
+	    <table border="0" cellpadding="0" cellspacing="0">
+	     <tbody><tr>
+		 
+		 	 <td>
+		 <a href="http://zdnet.com.com/redir?ontId=2878940&amp;lop=prev&amp;siteId=2&amp;destUrl=http%3A%2F%2Ftechupdate%2Ezdnet%2Ecom%2Ftechupdate%2Fstories%2Fmain%2F0%2C14179%2C2878940%2D1%2C00%2Ehtml" class="zd"><img src="0,14179,2878940-2,00_files/arrow_left.gif" alt="" align="absmiddle" border="0" height="15" width="13"></a>
+		 </td><td class="m1" align="right">&nbsp;<a href="http://zdnet.com.com/redir?ontId=2878940&amp;lop=prev&amp;siteId=2&amp;destUrl=http%3A%2F%2Ftechupdate%2Ezdnet%2Ecom%2Ftechupdate%2Fstories%2Fmain%2F0%2C14179%2C2878940%2D1%2C00%2Ehtml" class="zd">Previous page</a>&nbsp;|&nbsp;&nbsp;</td>
+		  <td class="m1" align="right">
+	
+		 <span class="m1"><span class="db"><b><a class="zd" href="http://zdnet.com.com/redir?ontId=2878940&amp;lop=prev&amp;siteId=2&amp;destUrl=http%3A%2F%2Ftechupdate%2Ezdnet%2Ecom%2Ftechupdate%2Fstories%2Fmain%2F0%2C14179%2C2878940%2D1%2C00%2Ehtml">1</a></b></span></span>&nbsp;<span class="m1"><span class="db">2</span></span>&nbsp; </td></tr>
+	</tbody></table>
+	   
+	   
+	 </td>
+	
+	
+	 
+	</tr>
+	</tbody></table>
+	
+	 <br>
+	
+	           <table align="center" border="0" cellpadding="0" cellspacing="0" width="548">
+	<tbody><tr><td><img src="" b.gif="" height="7" width="1"></td></tr>
+	<tr><td>
+	[an error occurred while processing this directive] </td></tr>
+	<tr><td><img src="" b.gif="" height="5" width="1"></td></tr>
+	<tr><td><img src="0,14179,2878940-2,00_files/dots548.gif" height="5" width="548"></td></tr>
+	<tr><td><img src="" b.gif="" height="5" width="1"></td></tr>
+	</tbody></table>
+	
+	
+	 <a name="talkback">
+	
+	 
+	<img src="0,14179,2878940-2,00_files/talkback_sh2.gif" border="0" height="19" width="185">
+	
+	 [an error occurred while processing this directive]
+	 <br>
+	  
+		
+	<br>
+
+<script language="JAVASCRIPT" src="0,14179,2878940-2,00_files/1216.html"></script>
+
+
+ <img src="0,14179,2878940-2,00_files/b.gif" alt="" height="10" width="1"><br>
+</a></td>
+
+<td bgcolor="#ffffff" width="10"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="1" width="10"><br></td>
+<td bgcolor="#ffffff" width="160"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="10" width="1"><br>
+
+
+	<!-- AD:SKYSCRAPER-->
+	 <!-- AD:ENDSKY -->
+
+	<!-- **right:start** -->	
+	<!--powerbox-->
+ 
+[an error occurred while processing this directive]
+<!--/powerbox-->
+
+
+	  
+<table background="0,14179,2878940-2,00_files/IT_inthisbx_mid2.gif" border="0" cellpadding="0" cellspacing="0" width="160">
+  <tbody><tr>
+   <td colspan="3"><img src="0,14179,2878940-2,00_files/IT_inthisbx_top2.gif" height="26" width="160"></td>
+  </tr>
+
+
+	 <tr><td height="6" width="5"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="6" width="5"></td><td width="146"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="6" width="146"></td><td width="8"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="6" width="8"></td></tr><tr><td width="5"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="1" width="5"></td><td class="m1" valign="top" width="146"><b class="db">1.&nbsp;<a href="http://techupdate.zdnet.com/techupdate/stories/main/0,14179,2878940-1,00.html" class="zd">At last, real wireless LAN security</a></b><br></td><td width="8"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="1" width="8"></td></tr><tr><td height="6" width="5"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="6" width="5"></td><td width="146"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="6" width="146"></td><td width="8"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="6" width="8"></td></tr><tr><td colspan="3"><img src="0,14179,2878940-2,00_files/IT_inthisbx_line.gif" height="5" width="160"></td></tr><tr><td height="6" width="5"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="6" width="5"></td><td width="146"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="6" width="146"></td><td width="8"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="6" width="8"></td>
+			</tr><tr><td width="5"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="1" width="5"></td><td class="m1" valign="top" width="146"><b class="g3">2.&nbsp;Introducing 802.1x and EAP</b><br></td><td width="8"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="1" width="8"></td></tr><tr><td height="6" width="5"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="6" width="5"></td><td width="146"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="6" width="146"></td><td width="8"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="6" width="8"></td></tr> <tr>
+   <td colspan="3"><img src="0,14179,2878940-2,00_files/IT_inthisbx_bttm2.gif" height="8" width="160"></td>
+  </tr>
+
+</tbody></table>
+<img src="0,14179,2878940-2,00_files/b.gif" border="0" height="5" width="1"><br>
+ 
+<table background="0,14179,2878940-2,00_files/related_md_160_a.gif" border="0" cellpadding="0" cellspacing="0" width="160">
+<tbody><tr><td colspan="3"><img src="0,14179,2878940-2,00_files/related_hd_160_a.gif" border="0" height="23" width="160"><br></td></tr>
+<tr><td width="8"><img src="0,14179,2878940-2,00_files/b.gif" border="0" height="1" width="8"></td>
+<td valign="top">
+	<table border="0" cellpadding="2" cellspacing="0" width="100%">
+ 
+	
+			<tbody><tr><td colspan="2" class="m2"><b class="g3">ARTICLES</b></td></tr>
+	 
+		<tr><td valign="top" width="9"><img src="0,14179,2878940-2,00_files/promo_bullet.gif" border="0" height="11" width="9"></td><td class="m1" valign="top"><a class="zd" href="http://zdnet.com.com/redir?ontId=2878940&amp;lop=rel_info&amp;siteId=2&amp;destUrl=http%3A%2F%2Ftechupdate%2Ezdnet%2Ecom%2Ftechupdate%2Ffilters%2Fspecialreport%2F0%2C14622%2C6022247%2C00%2Ehtml">Special Report: Wireless LAN security</a></td></tr>
+	
+		<tr><td valign="top" width="9"><img src="0,14179,2878940-2,00_files/promo_bullet.gif" border="0" height="11" width="9"></td><td class="m1" valign="top"><a class="zd" href="http://zdnet.com.com/redir?ontId=2878940&amp;lop=rel_info&amp;siteId=2&amp;destUrl=%2Ftechupdate%2Fstories%2Fmain%2F0%2C14179%2C2865641%2C00%2Ehtml">Making wireless work</a></td></tr>
+	
+		<tr><td valign="top" width="9"><img src="0,14179,2878940-2,00_files/promo_bullet.gif" border="0" height="11" width="9"></td><td class="m1" valign="top"><a class="zd" href="http://zdnet.com.com/redir?ontId=2878940&amp;lop=rel_info&amp;siteId=2&amp;destUrl=%2Ftechupdate%2Fstories%2Fmain%2F0%2C14179%2C2865427%2C00%2Ehtml">Taming wireless nets</a></td></tr>
+	
+		<tr><td valign="top" width="9"><img src="0,14179,2878940-2,00_files/promo_bullet.gif" border="0" height="11" width="9"></td><td class="m1" valign="top"><a class="zd" href="http://zdnet.com.com/redir?ontId=2878940&amp;lop=rel_info&amp;siteId=2&amp;destUrl=%2Ftechupdate%2Fstories%2Fmain%2F0%2C14179%2C2845902%2C00%2Ehtml">The best way to secure wireless access</a></td></tr>
+	
+	
+	<tr><td colspan="2" class="m2"><b class="g3">PRODUCTS</b></td></tr>
+	 
+	<tr><td valign="top" width="9"><img src="0,14179,2878940-2,00_files/promo_bullet.gif" border="0" height="11" width="9"></td><td class="m1" valign="top"><a class="zd" href="http://zdnet.com.com/redir?ontId=2878940&amp;lop=rel_info&amp;siteId=2&amp;destUrl=http%3A%2F%2Ftechupdate%2Ecnet%2Ecom%2Fenterprise%2F0%2D6133457%2D720%2D9994514%2Ehtml">ISS Wireless Scanner 1.0</a></td></tr>
+	
+	<tr><td valign="top" width="9"><img src="0,14179,2878940-2,00_files/promo_bullet.gif" border="0" height="11" width="9"></td><td class="m1" valign="top"><a class="zd" href="http://zdnet.com.com/redir?ontId=2878940&amp;lop=rel_info&amp;siteId=2&amp;destUrl=http%3A%2F%2Ftechupdate%2Ecnet%2Ecom%2Fenterprise%2F0%2D6133362%2D720%2D6688423%2Ehtml">Airopeek</a></td></tr>
+	
+	<tr><td valign="top" width="9"><img src="0,14179,2878940-2,00_files/promo_bullet.gif" border="0" height="11" width="9"></td><td class="m1" valign="top"><a class="zd" href="http://zdnet.com.com/redir?ontId=2878940&amp;lop=rel_info&amp;siteId=2&amp;destUrl=http%3A%2F%2Ftechupdate%2Ecnet%2Ecom%2Fenterprise%2F0%2D6133379%2D720%2D9030393%2Ehtml">Ecutel Viatores Enterprise Edition</a></td></tr>
+	
+	<tr><td valign="top" width="9"><img src="0,14179,2878940-2,00_files/promo_bullet.gif" border="0" height="11" width="9"></td><td class="m1" valign="top"><a class="zd" href="http://zdnet.com.com/redir?ontId=2878940&amp;lop=rel_info&amp;siteId=2&amp;destUrl=http%3A%2F%2Ftechupdate%2Ecnet%2Ecom%2Fenterprise%2F0%2D6133362%2D720%2D9849088%2Ehtml">Cisco Access Registrar 1.7</a></td></tr>
+	 </tbody></table>
+</td><td width="8"><img src="0,14179,2878940-2,00_files/b.gif" border="0" height="1" width="8"></td>
+</tr>
+<tr><td colspan="3"><img src="0,14179,2878940-2,00_files/related_bt_160_a.gif" border="0" height="13" width="160"><br></td></tr>
+</tbody></table>
+<table border="0" cellpadding="0" cellspacing="0" width="160"><tbody><tr>
+<td valign="top" width="160">
+<img src="0,14179,2878940-2,00_files/search_hed_160.gif" border="0" height="28" width="160"><br>
+	<table valign="top" background="0,14179,2878940-2,00_files/search_bg_160.gif" border="0" cellpadding="0" cellspacing="0" width="160">
+	<tbody><tr><td rowspan="2" width="10"><img src="0,14179,2878940-2,00_files/b.gif" border="0" height="1" width="10"></td><td height="3"><img src="0,14179,2878940-2,00_files/b.gif" border="0" height="3" width="1"></td></tr>
+	<tr><td valign="top">  
+		<table border="0" cellpadding="0" cellspacing="0" width="150">
+		<form name="mainform" method="get" action="http://www.search.com/redirect"></form>
+		<tbody><tr>
+		<td valign="top">
+		<input name="q" size="20" class="txtfld" type="text">
+		<select name="target" class="tdrop">
+		<option value="http://zdnet.search.com/search?cat=279" selected="selected">All ZDNet</option>
+		<option value="http://techupdate.search.com/search?cat=302">Tech Update</option>
+		<option value="http://www.search.com/search?channel=1">The Web</option>
+		</select>
+		</td></tr>
+		<tr><td valign="top">
+		<input src="0,14179,2878940-2,00_files/tool_search_off.gif" onclick="submit" border="0" type="image">
+		</td></tr>
+	    </tbody></table>
+	</td>
+	</tr>
+	</tbody></table>
+<img src="0,14179,2878940-2,00_files/search_bot_160.gif" border="0" height="4" width="160"><br>
+</td></tr></tbody></table>
+<img src="0,14179,2878940-2,00_files/b.gif" border="0" height="5" width="1"><br>
+<script language="JavaScript">
+<!-- Begin
+function popUp(url) 
+	{
+	day = new Date();
+	id = day.getTime();
+	spawn = eval("page" + id + " = window.open(url,'newWin','toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=580,height=310');");
+	spawn.focus();
+	}
+// End -->
+</script>
+
+<table bgcolor="#efefef" border="0" cellpadding="0" cellspacing="0" width="160">
+<tbody><tr>
+<td colspan="3" valign="top"><img src="0,14179,2878940-2,00_files/vert_hdr.gif" border="0" height="43" width="160"><br></td></tr>
+<tr><td valign="top" width="5"><img src="0,14179,2878940-2,00_files/b.gif" border="0" height="1" width="5"></td><td valign="top" width="150">
+	<table bgcolor="#efefef" border="0" cellpadding="0" cellspacing="0" width="150">
+	<form action="http://nl.com.com/servlet/MiniFormHandler?brand=zdnet&amp;tag=mf.but.tu.story.vt.bg" method="post" style="display: inline;"></form>
+<input name="brand" value="zdnet" type="hidden">
+<input name="subs_channel" value="zd_techupdate" type="hidden">
+
+	<tbody><tr>
+	<td valign="top" width="15"><input name="list_id" value="e539" type="checkbox"></td>
+	<td class="m1" width="135"><strong>TECH UPDATE TODAY DAILY:</strong><br>
+	Dan Farber and David Berlind deliver daily insights on the business and technology news that matters to enterprise IT.
+	</td>
+	</tr>
+	</tbody></table>
+</td>
+<td valign="top" width="5"><img src="0,14179,2878940-2,00_files/b.gif" border="0" height="1" width="5"></td>
+</tr>
+<tr>
+<td colspan="3" valign="top"><img src="0,14179,2878940-2,00_files/specoffers2.gif" height="45" width="160"><br></td>
+</tr>
+<tr>
+<td valign="top" width="5"><img src="0,14179,2878940-2,00_files/b.gif" border="0" height="1" width="5"></td>
+<td valign="top" width="150"><img src="0,14179,2878940-2,00_files/b.gif" border="0" height="3" width="150"><br>
+	<table bgcolor="#efefef" border="0" cellpadding="0" cellspacing="0" width="150">
+	<tbody><tr>
+	<td align="left"><input name="list_id" value="e580" type="checkbox"></td> 
+ <td class="m1" height="25" valign="middle" width="131"><a href="javascript:popUp('http://nl.com.com/nc_info.html')" class="zd">Enterprise Alerts</a></td>
+ <td width="5"></td>
+</tr>  
+<tr>
+
+ <td align="left"><input name="list_id" value="n112" type="checkbox"></td> 
+ <td class="m1" height="25" valign="middle" width="131"><a href="javascript:popUp('http://nl.com.com/nc_info.html')" class="zd">IT Management</a></td>
+ <td width="5"></td>
+</tr>
+<tr>
+
+ <td align="left"><input name="list_id" value="n113" type="checkbox"></td> 
+ <td class="m1" height="25" valign="middle" width="131"><a href="javascript:popUp('http://nl.com.com/nc_info.html')" class="zd">IT Professionals</a></td>
+ <td width="5"></td>
+</tr>
+<tr>
+
+ <td align="left"><input name="list_id" value="n111" type="checkbox"></td> 
+ <td class="m1" height="25" valign="middle" width="131"><a href="javascript:popUp('http://nl.com.com/nc_info.html')" class="zd">Online Shopping</a></td>
+ <td width="5"></td>
+</tr>
+<tr>
+
+ <td align="left"><input name="list_id" value="n122" type="checkbox"></td> 
+ <td class="m1" height="25" valign="middle" width="131"><a href="javascript:popUp('http://nl.com.com/nc_info.html')" class="zd">System Administration</a></td>
+ <td width="5"></td>
+</tr>
+<tr>
+
+ <td align="left"><input name="list_id" value="n115" type="checkbox"></td> 
+ <td class="m1" height="25" valign="middle" width="131"><a href="javascript:popUp('http://nl.com.com/nc_info.html')" class="zd">Linux</a></td>
+	</tr>
+	</tbody></table>
+</td><td valign="top" width="5"><img src="0,14179,2878940-2,00_files/b.gif" border="0" height="1" width="5"></td></tr>
+<tr>
+<td colspan="3" align="center" width="160"><img src="0,14179,2878940-2,00_files/divgray.gif" height="6" width="160"></td>
+</tr>
+<tr>
+<td valign="top" width="5"><img src="0,14179,2878940-2,00_files/b.gif" border="0" height="1" width="5"></td>
+<td valign="top" width="150">
+	<table bgcolor="#efefef" border="0" cellpadding="0" cellspacing="0" width="150">
+	<tbody><tr>
+	<td colspan="2" class="m1" align="center" height="29" valign="middle" width="150"> 
+	<input class="button" src="0,14179,2878940-2,00_files/redbutton.gif" type="image" vspace="1"><br>
+	<a href="http://nl.com.com/acct_login.jsp?brand=zdnet&amp;tag=mf.link.tu.story.toprt.vt" class="zd">Manage My Newsletters</a><br>
+	<img src="0,14179,2878940-2,00_files/b.gif" border="0" height="5" width="1"><br>
+	</td></tr>
+	
+	</tbody></table>
+</td><td valign="top" width="5"><img src="0,14179,2878940-2,00_files/b.gif" border="0" height="1" width="5"></td>
+</tr>
+<tr>   
+<td colspan="3" bgcolor="#cccccc" height="1"><img src="0,14179,2878940-2,00_files/b.gif" height="1" width="160"></td>
+</tr>
+</tbody></table>
+ <!-- **right:end** -->	
+
+<img src="0,14179,2878940-2,00_files/b.gif" alt="" height="10" width="1"><br>
+</td>
+<td bgcolor="#ffffff" width="1"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="1" width="1"><br></td>
+<td bgcolor="#1e5c99" width="9"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="1" width="9"><br></td>
+<td bgcolor="#83a3cb" width="1"><img src="0,14179,2878940-2,00_files/b.gif" alt="" height="1" width="1"><br></td>
+</tr>
+
+</tbody></table>
+<!-- /right column layout -->
+
+[an error occurred while processing this directive]<!-- **startcobrand:footer** -->
+
+[an error occurred while processing this directive]</div>
+
+
+</body></html>
