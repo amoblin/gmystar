@@ -1,20 +1,3 @@
-IEEE:the Institute of Electrical and Electronics Engineers 电气与电子工程师学会
-
-EAP:Extensible Authentication Protocol扩展认证协议
-
-EAP类型：
-	1. Message Digest 5 Challenge(MD5-Challenge) 
-	2.EAP-Transport Level Security(EAP-TLS)
-
-CHAP: Challenge Handshake Authentication Protocol挑战握手验证协议
-
-LAN:Local Area Network
-
-EAPOL:EAP over LAN
-
-RADIUS:Remote Authentication Dial In User Service远程用户拨号认证系统
-
-AAA:Authentication,Authorization and Accounting 认证，授权和记账
 
 Authentication Server可以采用标准的Radius认证服务器，也可以选用业务交换机。
 
