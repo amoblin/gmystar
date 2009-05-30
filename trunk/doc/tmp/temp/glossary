@@ -1,3 +1,20 @@
+IEEE:the Institute of Electrical and Electronics Engineers 电气与电子工程师学会
+
+EAP:Extensible Authentication Protocol扩展认证协议
+
+EAP类型：
+	1. Message Digest 5 Challenge(MD5-Challenge) 
+	2.EAP-Transport Level Security(EAP-TLS)
+
+CHAP: Challenge Handshake Authentication Protocol挑战握手验证协议
+
+LAN:Local Area Network
+
+EAPOL:EAP over LAN
+
+RADIUS:Remote Authentication Dial In User Service远程用户拨号认证系统
+
+AAA:Authentication,Authorization and Accounting 认证，授权和记账
 IP授权模式
 	锐捷网络实现的802.1x，可以强制要求已认证的用户使用固定的IP。管理员通过配置IP授权模式来限定用户获得IP地址的方式。IP授权模式有三 种：DISABLE模式、DHCP SERVER模式、RADIUS SERVER模式。下面分别介绍这三种工作模式的特性：
 	DISABLE模式（默认）：在该模式下，交换机不对用户的IP做限制，用户只需认证通过便可以使用网络。
