@@ -1,0 +1,1 @@
+Linux下的锐捷客户端，以mystar为基础，用C++改写，使用gtkmm和glade-3做UI。
